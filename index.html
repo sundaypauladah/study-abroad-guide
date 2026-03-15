@@ -1424,6 +1424,35 @@ html, body {
 
 /* ══ END SCORE HEADER MOBILE FIX ═══════════════════════════════════════ */
 
+
+/* ══ MOBILE SCORE RING TEXT FIT ══════════════════════════════════════ */
+
+/* Main result score rings — prevent % number touching border */
+@media (max-width: 540px) {
+  .score-ring { width: 84px !important; height: 84px !important; }
+  .score-ring-num { font-size: 18px !important; }
+  .score-ring-label { font-size: 7px !important; margin-bottom: 3px !important; }
+  .score-ring-sub { font-size: 7px !important; }
+}
+@media (max-width: 380px) {
+  .score-ring { width: 72px !important; height: 72px !important; }
+  .score-ring-num { font-size: 15px !important; }
+  .score-ring-label { font-size: 6px !important; }
+}
+
+/* Shareable score card preview rings */
+@media (max-width: 540px) {
+  .sp-ring { width: 52px !important; height: 52px !important; border-width: 3px !important; }
+  .sp-ring-num { font-size: 13px !important; }
+  .sp-ring-label { font-size: 6px !important; margin-bottom: 1px !important; }
+}
+@media (max-width: 380px) {
+  .sp-ring { width: 44px !important; height: 44px !important; }
+  .sp-ring-num { font-size: 11px !important; }
+}
+
+/* ══ END SCORE RING TEXT FIT ════════════════════════════════════════ */
+
 </style>
 </head>
 <body>
