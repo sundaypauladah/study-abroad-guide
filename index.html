@@ -960,6 +960,338 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 img, svg { max-width: 100%; }
 /* ══ END OVERFLOW CONTAINMENT ══════════════════════════════════════════ */
 
+
+/* ══════════════════════════════════════════════════════════════════════════
+   MOBILE-FIRST REDESIGN
+   Base = mobile (320px+), scale up at 480, 640, 768, 960
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── GLOBAL RESETS ────────────────────────────────────────────────────── */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ── TOPBAR ───────────────────────────────────────────────────────────── */
+.topbar { padding: 0 16px; height: 48px; }
+.topbar-logo { font-size: 15px; gap: 7px; }
+.topbar-logo span { font-size: 8px; padding: 2px 6px; }
+.topbar-link { font-size: 11px; }
+
+/* ── HERO ─────────────────────────────────────────────────────────────── */
+.hero { padding: 36px 16px 32px; }
+.hero-inner { padding: 0; }
+.hero-badge { font-size: 11px; padding: 4px 12px; margin-bottom: 14px; }
+.hero h1 { font-size: 22px; line-height: 1.25; margin-bottom: 12px; letter-spacing: -0.3px; }
+.hero h1 em { display: inline; }
+.hero-sub { font-size: 13px; line-height: 1.65; margin-bottom: 18px; max-width: 100%; }
+.checker-hero-btn--pulse {
+  font-size: 14px;
+  padding: 14px 18px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 18px;
+}
+.hero-steps {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 0;
+}
+.hero-step { font-size: 12px; }
+.hero-step-arrow { transform: rotate(90deg); font-size: 14px; margin-left: 10px; }
+
+@media (min-width: 640px) {
+  .hero { padding: 48px 24px 44px; }
+  .hero h1 { font-size: 28px; }
+  .hero-sub { font-size: 14px; }
+  .checker-hero-btn--pulse { width: auto; }
+  .hero-steps { flex-direction: row; align-items: center; }
+  .hero-step-arrow { transform: none; margin-left: 0; }
+}
+
+/* ── NAV TABS ─────────────────────────────────────────────────────────── */
+.nav-tabs-inner { padding: 0 8px; }
+.nav-tab { padding: 13px 12px; font-size: 12px; white-space: nowrap; }
+
+@media (min-width: 640px) {
+  .nav-tabs-inner { padding: 0 16px; }
+  .nav-tab { padding: 14px 16px; font-size: 13px; }
+}
+
+/* ── MAIN CONTENT ─────────────────────────────────────────────────────── */
+.main { padding: 20px 14px 60px; }
+
+@media (min-width: 480px) { .main { padding: 22px 18px 70px; } }
+@media (min-width: 640px) { .main { padding: 24px 24px 80px; } }
+@media (min-width: 960px) { .main { padding: 28px 28px 80px; } }
+
+/* ── SECTION HEADERS ──────────────────────────────────────────────────── */
+.section-header h2 { font-size: 18px; }
+.section-header p { font-size: 13px; }
+
+@media (min-width: 640px) {
+  .section-header h2 { font-size: 22px; }
+  .section-header p { font-size: 14px; }
+}
+
+/* ── FILTER BAR ───────────────────────────────────────────────────────── */
+.filter-bar { gap: 8px; }
+.search-wrap { min-width: 100%; }
+.filter-select { width: 100%; min-width: 100%; }
+
+@media (min-width: 480px) {
+  .search-wrap { min-width: 200px; flex: 1; }
+  .filter-select { width: auto; min-width: 130px; }
+  .filter-bar { flex-wrap: wrap; }
+}
+
+/* ── COUNTRY GRID ─────────────────────────────────────────────────────── */
+.country-grid { grid-template-columns: 1fr; gap: 12px; }
+
+@media (min-width: 480px) { .country-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); } }
+
+/* ── FUNDING GRID ─────────────────────────────────────────────────────── */
+.funding-grid { grid-template-columns: 1fr; gap: 12px; }
+
+@media (min-width: 480px) { .funding-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); } }
+
+/* ── FUNDING CARDS ────────────────────────────────────────────────────── */
+.funding-card { padding: 14px; }
+.funding-card-header { flex-wrap: wrap; gap: 6px; }
+.funding-name { font-size: 14px; }
+.funding-value { max-width: 100%; text-align: left; font-size: 12px; }
+
+/* ── COUNTRY CARDS ────────────────────────────────────────────────────── */
+.country-card-header { padding: 12px 14px 10px; }
+.country-name { font-size: 15px; }
+.country-count { font-size: 18px; }
+.country-card-sub { padding: 8px 14px 10px; font-size: 12px; }
+.country-tags { padding: 0 14px 12px; }
+
+/* ── MODAL ────────────────────────────────────────────────────────────── */
+.modal-overlay { padding: 0; align-items: flex-end; }
+.modal { border-radius: 16px 16px 0 0; max-height: 92vh; }
+.modal-header { padding: 16px 16px 14px; }
+.modal-title { font-size: 17px; }
+.modal-search { padding: 10px 14px; flex-wrap: wrap; gap: 8px; }
+.uni-table th, .uni-table td { padding: 9px 10px; font-size: 12px; }
+
+@media (min-width: 640px) {
+  .modal-overlay { padding: 20px 12px; align-items: flex-start; }
+  .modal { border-radius: 16px; max-height: none; }
+  .modal-header { padding: 20px 24px 16px; }
+  .modal-title { font-size: 20px; }
+}
+
+/* ── CHECKER MODAL ────────────────────────────────────────────────────── */
+.checker-overlay { padding: 0; align-items: flex-end; }
+.checker-modal { border-radius: 20px 20px 0 0; max-height: 94vh; width: 100%; max-width: 100%; }
+.checker-header { border-radius: 20px 20px 0 0; padding: 18px 18px 14px; }
+.checker-title { font-size: 16px; }
+.checker-body { padding: 20px 16px 24px; }
+.step-q { font-size: 15px; }
+.step-hint { font-size: 12px; }
+.checker-chip { font-size: 12px; padding: 7px 12px; }
+.checker-radio { padding: 10px 14px; font-size: 13px; }
+
+@media (min-width: 480px) {
+  .checker-overlay { align-items: center; padding: 16px; }
+  .checker-modal { border-radius: 18px; max-width: 640px; max-height: 90vh; }
+  .checker-header { border-radius: 18px 18px 0 0; padding: 22px 26px 16px; }
+  .checker-body { padding: 24px 24px 28px; }
+}
+
+/* ── RESULTS SCORE HEADER ─────────────────────────────────────────────── */
+.result-score-header { padding: 16px; }
+.score-card-label { font-size: 9px; margin-bottom: 12px; padding-bottom: 10px; }
+.result-score-top { flex-direction: column; gap: 12px; align-items: flex-start; }
+.score-ring-wrap { flex-direction: row; gap: 16px; align-items: center; width: 100%; }
+.score-ring { width: 80px; height: 80px; border-width: 5px; }
+.score-ring-num { font-size: 22px; }
+.score-ring-label { font-size: 8px; }
+.score-ring-sub { font-size: 8px; }
+.score-divider { display: none; }
+.score-info { width: 100%; }
+.score-headline { font-size: 13px; }
+.score-sub { font-size: 11px; }
+.score-badge { font-size: 11px; }
+.score-bar-label { font-size: 10px; min-width: 100px; }
+.score-bar-pct { font-size: 12px; }
+.score-bars { gap: 8px; margin-top: 12px; padding-top: 12px; }
+
+@media (min-width: 540px) {
+  .result-score-top { flex-direction: row; align-items: center; }
+  .score-ring-wrap { flex-direction: column; width: auto; }
+  .score-ring { width: 120px; height: 120px; }
+  .score-ring-num { font-size: 28px; }
+  .score-divider { display: block; }
+}
+
+/* ── AI SUMMARY ───────────────────────────────────────────────────────── */
+.ai-summary { padding: 14px 16px; }
+.ai-summary-label { font-size: 10px; }
+.ai-summary { font-size: 13px; line-height: 1.65; }
+
+/* ── SW GRID (STRENGTHS) ──────────────────────────────────────────────── */
+.sw-grid { grid-template-columns: 1fr; gap: 10px; }
+.sw-card { padding: 12px 14px; }
+.sw-card-title { font-size: 12px; }
+.sw-item { font-size: 11px; }
+.next-actions { padding: 12px 14px; }
+.next-actions-title { font-size: 12px; }
+.next-action-item { font-size: 11px; }
+.action-num { width: 16px; height: 16px; font-size: 9px; }
+
+@media (min-width: 540px) { .sw-grid { grid-template-columns: 1fr 1fr; } }
+
+/* ── RESULT CARDS ─────────────────────────────────────────────────────── */
+.result-country-header { padding: 10px 14px; }
+.result-country-name { font-size: 13px; }
+.result-unis { padding: 0 12px 10px; }
+.result-uni { padding: 9px 6px; }
+.result-uni-name { font-size: 13px; }
+.result-uni-meta { font-size: 11px; }
+.detail-grid { grid-template-columns: 1fr 1fr; gap: 8px 12px; }
+.detail-field label { font-size: 9px; }
+.detail-field span { font-size: 12px; }
+
+/* ── BREAKDOWN BUTTON ─────────────────────────────────────────────────── */
+.btn-view-breakdown { font-size: 13px; padding: 13px 14px; }
+.btn-download-pdf { font-size: 13px; padding: 11px 14px; }
+.breakdown-count { font-size: 10px; padding: 2px 7px; }
+
+/* ── SHARE SECTION ────────────────────────────────────────────────────── */
+.share-section { padding: 16px; }
+.share-title { font-size: 14px; }
+.share-desc { font-size: 12px; }
+.share-preview { padding: 14px; }
+.sp-ring { width: 64px; height: 64px; border-width: 3px; }
+.sp-ring-num { font-size: 17px; }
+.sp-ring-label { font-size: 7px; }
+.sp-scores { gap: 10px; }
+.sp-info { max-width: 100%; }
+.sp-profile { font-size: 9px; }
+.sp-cta { font-size: 9px; }
+.sp-url { font-size: 11px; }
+.caption-box { padding: 12px 14px; }
+.caption-text { font-size: 13px; }
+.share-btn-main { padding: 12px; font-size: 14px; }
+
+/* ── LOAN CARDS ───────────────────────────────────────────────────────── */
+.loan-header { padding: 14px 16px; flex-wrap: wrap; gap: 8px; }
+.loan-name { font-size: 16px; }
+.loan-body { padding: 14px 16px; grid-template-columns: 1fr 1fr; gap: 10px; }
+.loan-notes { padding: 10px 16px 14px; font-size: 12px; }
+
+/* ── DEADLINES / REQUIREMENTS TABLES ─────────────────────────────────── */
+.deadline-table th, .deadline-table td,
+.req-table th, .req-table td { padding: 8px 10px; font-size: 11px; }
+
+/* ── RADIUS SECTION ───────────────────────────────────────────────────── */
+.radius-section { padding: 20px 16px; }
+.radius-section-title { font-size: 15px; }
+.radius-section-sub { font-size: 12px; }
+.radius-feat-grid { grid-template-columns: 1fr; gap: 10px; }
+.radius-feat-card { padding: 12px; }
+.radius-feat-name { font-size: 12px; }
+.radius-feat-text { font-size: 11px; }
+.radius-stats-row { gap: 8px; }
+.radius-stat-item { min-width: 70px; }
+.radius-stat-n { font-size: 18px; }
+.radius-stat-l { font-size: 10px; }
+.radius-cta-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+.radius-store-row { flex-wrap: wrap; gap: 8px; }
+.radius-founder-note { font-size: 11px; }
+
+@media (min-width: 480px) { .radius-feat-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 640px) {
+  .radius-feat-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  .radius-section { padding: 24px 26px; }
+  .radius-cta-row { flex-direction: row; align-items: center; }
+}
+
+/* ── RADIUS BANNER ────────────────────────────────────────────────────── */
+.radius-banner { padding: 20px 18px; gap: 16px; }
+.radius-banner-title { font-size: 16px; }
+.radius-banner-sub { font-size: 12px; }
+.radius-banner-right { align-items: flex-start; width: 100%; }
+.radius-banner-stores { justify-content: flex-start; gap: 8px; }
+.radius-store-badge { padding: 7px 12px; }
+.radius-store-name { font-size: 12px; }
+
+@media (min-width: 640px) {
+  .radius-banner { padding: 24px 32px; }
+  .radius-banner-title { font-size: 18px; }
+  .radius-banner-right { align-items: flex-end; width: auto; }
+  .radius-banner-stores { justify-content: flex-end; }
+}
+
+/* ── WELCOME SECTION ──────────────────────────────────────────────────── */
+.welcome-grid { grid-template-columns: 1fr; gap: 16px; margin-bottom: 20px; }
+.welcome-letter { border-radius: 10px; }
+.letter-label { padding: 10px 16px; font-size: 12px; }
+.letter-body { padding: 16px; font-size: 13px; line-height: 1.75; }
+.letter-body p { margin-bottom: 12px; }
+.letter-sig { font-size: 13px; }
+.welcome-stats { grid-template-columns: 1fr 1fr; gap: 8px; max-width: 100%; }
+.wstat { padding: 14px 12px; border-radius: 10px; }
+.wstat-n { font-size: 24px; }
+.wstat-l { font-size: 10px; }
+
+@media (min-width: 768px) { .welcome-grid { grid-template-columns: 1fr 340px; } }
+
+/* ── HOW-TO SECTION ───────────────────────────────────────────────────── */
+.how-to-cols { grid-template-columns: 1fr; gap: 20px; }
+.step-card { padding: 14px 16px; gap: 14px; }
+.step-num { width: 34px; height: 34px; font-size: 14px; flex-shrink: 0; }
+.step-content h3 { font-size: 14px; }
+.step-content p { font-size: 12px; }
+.gloss-item { padding: 10px 12px; }
+.gloss-term { font-size: 12px; }
+.gloss-def { font-size: 11px; }
+.glossary-grid { grid-template-columns: 1fr; gap: 8px; }
+
+@media (min-width: 640px) { .glossary-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); } }
+@media (min-width: 768px) { .how-to-cols { grid-template-columns: 1fr 340px; } }
+
+/* ── TIMELINE ─────────────────────────────────────────────────────────── */
+.tl-item { grid-template-columns: 1fr; gap: 3px; }
+.tl-when { font-size: 13px; }
+.tl-label { font-size: 11px; }
+.tl-text { font-size: 12px; padding-top: 0; }
+
+@media (min-width: 540px) { .tl-item { grid-template-columns: 140px 1fr; gap: 14px; } }
+
+/* ── TIER GRID ────────────────────────────────────────────────────────── */
+.tier-grid { gap: 8px; }
+.tier-card { min-width: 100%; padding: 12px 14px; }
+.tier-label { font-size: 12px; }
+.tier-detail { font-size: 11px; }
+
+@media (min-width: 480px) { .tier-card { min-width: 200px; } }
+
+/* ── NAME MODAL ───────────────────────────────────────────────────────── */
+.name-modal { border-radius: 16px 16px 0 0; width: 100%; max-width: 100%; }
+.name-modal-overlay { align-items: flex-end; padding: 0; }
+.name-modal-header { padding: 18px 18px 14px; border-radius: 16px 16px 0 0; }
+.name-modal-title { font-size: 15px; }
+.name-modal-body { padding: 18px; }
+.name-modal-actions { padding-top: 14px; }
+
+@media (min-width: 480px) {
+  .name-modal { border-radius: 16px; max-width: 480px; }
+  .name-modal-overlay { align-items: center; padding: 24px; }
+  .name-modal-header { border-radius: 16px 16px 0 0; padding: 22px 26px 18px; }
+  .name-modal-body { padding: 22px 26px; }
+}
+
+/* ── WARNING BANNERS ──────────────────────────────────────────────────── */
+.warning-banner { padding: 12px 14px; font-size: 12px; }
+
+/* ══ END MOBILE-FIRST ═══════════════════════════════════════════════════ */
+
 </style>
 </head>
 <body>
@@ -1524,7 +1856,7 @@ img, svg { max-width: 100%; }
   <div class="name-modal">
     <div class="name-modal-header">
       <div class="name-modal-title">&#127891; Almost there &mdash; personalise your results</div>
-      <div class="name-modal-sub">We&apos;ll put your name on your score card. Drop your email to get a free copy of your results.</div>
+      <div class="name-modal-sub">We&apos;ll personalise your results and score card with your name.</div>
     </div>
     <div class="name-modal-body">
       <label class="name-modal-label">First name <span style="color:#dc2626">*</span></label>
