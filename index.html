@@ -1731,6 +1731,67 @@ html, body {
 }
 /* ══ END FINAL MOBILE CATCH-ALL ═══════════════════════════ */
 
+
+/* ══ CHECKER MODAL HEIGHT FIX — prevents top cut-off on mobile ══════════ */
+@media (max-width: 540px) {
+  .checker-overlay {
+    padding: 0 !important;
+    align-items: flex-start !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .checker-modal {
+    border-radius: 0 !important;
+    min-height: 100% !important;
+    max-height: none !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: visible !important;
+  }
+  .checker-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 10 !important;
+    border-radius: 0 !important;
+    flex-shrink: 0 !important;
+  }
+  .checker-body {
+    flex: 1 !important;
+    overflow-y: visible !important;
+    overflow-x: hidden !important;
+    padding-bottom: 40px !important;
+  }
+  /* Results step — needs scrollable body */
+  #cstep-results {
+    overflow-y: visible !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+  /* Score label at very top of results — give it breathing room */
+  .score-card-label {
+    padding-top: 6px !important;
+  }
+}
+
+@media (min-width: 541px) {
+  .checker-overlay {
+    padding: 16px !important;
+    align-items: center !important;
+  }
+  .checker-modal {
+    border-radius: 18px !important;
+    max-height: 92vh !important;
+    overflow-y: auto !important;
+  }
+  .checker-header {
+    border-radius: 18px 18px 0 0 !important;
+    position: sticky !important;
+    top: 0 !important;
+  }
+}
+/* ══ END CHECKER MODAL HEIGHT FIX ══════════════════════════════════════ */
+
 </style>
 </head>
 <body>
@@ -2016,33 +2077,76 @@ html, body {
         <div class="checker-warning" id="warn-6"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg> Please select a language test or &quot;No test taken yet&quot; to continue.</div>
         <div class="checker-nav"><button class="btn-back" onclick="prevStep(6)">&#x2190; Back</button><button class="btn-next" onclick="nextStep(6)">Next &#x2192;</button></div>
       </div>
-      <div class="checker-step" id="cstep-7">
-        <div class="step-q">Tell us about your academic profile</div>
-        <div class="step-hint">Used to calculate your readiness score and match you to the right scholarships.</div>
-        <label style="font-size:13px;font-weight:600;color:var(--navy);display:block;margin-bottom:8px">Academic grade / GPA</label>
-        <div class="checker-radio-group" style="margin-bottom:18px">
-          <label class="checker-radio" onclick="selectRadio(this,'gpa','first')"><span class="checker-radio-dot"></span> First Class / Distinction / GPA 3.7+</label>
-          <label class="checker-radio" onclick="selectRadio(this,'gpa','upper')"><span class="checker-radio-dot"></span> 2:1 / Upper Second / GPA 3.3&ndash;3.6</label>
-          <label class="checker-radio" onclick="selectRadio(this,'gpa','lower')"><span class="checker-radio-dot"></span> 2:2 / Lower Second / GPA 2.7&ndash;3.2</label>
-          <label class="checker-radio" onclick="selectRadio(this,'gpa','pass')"><span class="checker-radio-dot"></span> Pass / GPA below 2.7</label>
+            <div class="checker-step" id="cstep-7">
+        <!-- ── Shown for UNDERGRADUATE ── -->
+        <div id="step7-ug">
+          <div class="step-q">Tell us about your academic profile</div>
+          <div class="step-hint">We&apos;ll use this to match you to the right universities and scholarships.</div>
+
+          <label style="font-size:13px;font-weight:600;color:var(--navy);display:block;margin-bottom:8px">Secondary school results</label>
+          <div class="checker-radio-group" style="margin-bottom:18px">
+            <label class="checker-radio" onclick="selectRadio(this,'gpa','first')"><span class="checker-radio-dot"></span> Distinctions / A grades &mdash; WAEC/NECO A1-B2, IGCSE A*/A, Baccalaur&eacute;at 16+</label>
+            <label class="checker-radio" onclick="selectRadio(this,'gpa','upper')"><span class="checker-radio-dot"></span> Credits / B grades &mdash; WAEC/NECO B3-C6, IGCSE B/C, solid GCE results</label>
+            <label class="checker-radio" onclick="selectRadio(this,'gpa','lower')"><span class="checker-radio-dot"></span> Passes &mdash; WAEC/NECO D7-E8, still eligible for most affordable universities</label>
+            <label class="checker-radio" onclick="selectRadio(this,'gpa','pass')"><span class="checker-radio-dot"></span> Awaiting results / still in secondary school</label>
+          </div>
+
+          <label style="font-size:13px;font-weight:600;color:var(--navy);display:block;margin-bottom:8px">Extracurriculars &amp; leadership</label>
+          <div class="checker-radio-group" style="margin-bottom:18px">
+            <label class="checker-radio" onclick="selectRadio(this,'workexp','5plus')"><span class="checker-radio-dot"></span> Strong &mdash; school prefect, club president, community volunteer, competition winner</label>
+            <label class="checker-radio" onclick="selectRadio(this,'workexp','2to5')"><span class="checker-radio-dot"></span> Some &mdash; participated in clubs, sports, community activities</label>
+            <label class="checker-radio" onclick="selectRadio(this,'workexp','under2')"><span class="checker-radio-dot"></span> Minimal &mdash; a few activities but not much to write about yet</label>
+            <label class="checker-radio" onclick="selectRadio(this,'workexp','none')"><span class="checker-radio-dot"></span> None listed yet &mdash; still building</label>
+          </div>
+
+          <label style="font-size:13px;font-weight:600;color:var(--navy);display:block;margin-bottom:8px">Awards, recognitions or achievements</label>
+          <div class="checker-radio-group">
+            <label class="checker-radio" onclick="selectRadio(this,'publications','strong')"><span class="checker-radio-dot"></span> Notable &mdash; national/international awards, scholarships, competitions, publications</label>
+            <label class="checker-radio" onclick="selectRadio(this,'publications','some')"><span class="checker-radio-dot"></span> A few &mdash; local awards, school recognitions, or certificates</label>
+            <label class="checker-radio" onclick="selectRadio(this,'publications','none')"><span class="checker-radio-dot"></span> None yet &mdash; still building my profile</label>
+          </div>
         </div>
-        <label style="font-size:13px;font-weight:600;color:var(--navy);display:block;margin-bottom:8px">Years of work or research experience</label>
-        <div class="checker-radio-group" style="margin-bottom:18px">
-          <label class="checker-radio" onclick="selectRadio(this,'workexp','none')"><span class="checker-radio-dot"></span> None / Still studying</label>
-          <label class="checker-radio" onclick="selectRadio(this,'workexp','under2')"><span class="checker-radio-dot"></span> Less than 2 years</label>
-          <label class="checker-radio" onclick="selectRadio(this,'workexp','2to5')"><span class="checker-radio-dot"></span> 2&ndash;5 years</label>
-          <label class="checker-radio" onclick="selectRadio(this,'workexp','5plus')"><span class="checker-radio-dot"></span> 5+ years</label>
+
+        <!-- ── Shown for MASTERS / PHD ── -->
+        <div id="step7-grad" style="display:none">
+          <div class="step-q">Tell us about your academic profile</div>
+          <div class="step-hint">Used to calculate your readiness score and match you to the right scholarships.</div>
+
+          <label style="font-size:13px;font-weight:600;color:var(--navy);display:block;margin-bottom:8px">Undergraduate degree grade / GPA</label>
+          <div class="checker-radio-group" style="margin-bottom:18px">
+            <label class="checker-radio" onclick="selectRadio(this,'gpa','first')"><span class="checker-radio-dot"></span> First Class / Distinction / GPA 3.7+</label>
+            <label class="checker-radio" onclick="selectRadio(this,'gpa','upper')"><span class="checker-radio-dot"></span> 2:1 / Upper Second / GPA 3.3&ndash;3.6</label>
+            <label class="checker-radio" onclick="selectRadio(this,'gpa','lower')"><span class="checker-radio-dot"></span> 2:2 / Lower Second / GPA 2.7&ndash;3.2</label>
+            <label class="checker-radio" onclick="selectRadio(this,'gpa','pass')"><span class="checker-radio-dot"></span> Pass / GPA below 2.7</label>
+          </div>
+
+          <label style="font-size:13px;font-weight:600;color:var(--navy);display:block;margin-bottom:8px">Years of work or research experience</label>
+          <div class="checker-radio-group" style="margin-bottom:18px">
+            <label class="checker-radio" onclick="selectRadio(this,'workexp','none')"><span class="checker-radio-dot"></span> None / Still studying</label>
+            <label class="checker-radio" onclick="selectRadio(this,'workexp','under2')"><span class="checker-radio-dot"></span> Less than 2 years</label>
+            <label class="checker-radio" onclick="selectRadio(this,'workexp','2to5')"><span class="checker-radio-dot"></span> 2&ndash;5 years</label>
+            <label class="checker-radio" onclick="selectRadio(this,'workexp','5plus')"><span class="checker-radio-dot"></span> 5+ years</label>
+          </div>
+
+          <label style="font-size:13px;font-weight:600;color:var(--navy);display:block;margin-bottom:8px">Publications, awards or recognitions</label>
+          <div class="checker-radio-group">
+            <label class="checker-radio" onclick="selectRadio(this,'publications','none')"><span class="checker-radio-dot"></span> None yet</label>
+            <label class="checker-radio" onclick="selectRadio(this,'publications','some')"><span class="checker-radio-dot"></span> 1&ndash;2 (local awards, certificates, conference papers)</label>
+            <label class="checker-radio" onclick="selectRadio(this,'publications','strong')"><span class="checker-radio-dot"></span> 3+ (international publications, patents, major awards)</label>
+          </div>
         </div>
-        <label style="font-size:13px;font-weight:600;color:var(--navy);display:block;margin-bottom:8px">Publications, awards or recognitions</label>
-        <div class="checker-radio-group">
-          <label class="checker-radio" onclick="selectRadio(this,'publications','none')"><span class="checker-radio-dot"></span> None yet</label>
-          <label class="checker-radio" onclick="selectRadio(this,'publications','some')"><span class="checker-radio-dot"></span> 1&ndash;2 (local awards, certificates, conference papers)</label>
-          <label class="checker-radio" onclick="selectRadio(this,'publications','strong')"><span class="checker-radio-dot"></span> 3+ (international publications, patents, major awards)</label>
+
+        <div class="checker-warning" id="warn-7">
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+          Please answer all three questions to continue.
         </div>
-        <div class="checker-warning" id="warn-7"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg> Please answer all three questions to continue.</div>
-        <div class="checker-nav"><button class="btn-back" onclick="prevStep(7)">&#x2190; Back</button><button class="btn-next" onclick="nextStep(7)">Next &#x2192;</button></div>
+        <div class="checker-nav">
+          <button class="btn-back" onclick="prevStep(7)">&#x2190; Back</button>
+          <button class="btn-next" onclick="nextStep(7)">Next &#x2192;</button>
+        </div>
       </div>
-      <div class="checker-step" id="cstep-8">
+
+<div class="checker-step" id="cstep-8">
         <div class="step-q">What&apos;s your funding goal?</div>
         <div class="step-hint">This shapes which scholarships and countries we prioritise in your results.</div>
         <div class="checker-radio-group">
@@ -2081,7 +2185,7 @@ html, body {
         <div class="checker-results" id="checker-results-content">
 
           <!-- ═══ PANEL 1: Main score + giveaway ═══ -->
-          <div id="results-panel-main">
+          <div id="results-panel-main" style="padding-top:4px;">
 
             <!-- Score header injected here by JS -->
             <div id="score-header-inject"></div>
@@ -2475,6 +2579,18 @@ function showCheckerStep(n){
   for(var i=0;i<steps.length;i++) steps[i].classList.remove('active');
   var el=document.getElementById('cstep-'+n);if(el) el.classList.add('active');
   if(typeof n==='number'){updateProgress(n);currentCheckerStep=n;}
+  // Step 7: show UG or grad questions based on level
+  if(n===7){
+    var isUG = checkerInputs.level==='Undergraduate';
+    var ugPanel=document.getElementById('step7-ug');
+    var gradPanel=document.getElementById('step7-grad');
+    if(ugPanel) ugPanel.style.display = isUG ? 'block' : 'none';
+    if(gradPanel) gradPanel.style.display = isUG ? 'none' : 'block';
+    // Reset answers when switching panels
+    checkerInputs.gpa=''; checkerInputs.workexp=''; checkerInputs.publications='';
+    var radios=el?el.querySelectorAll('.checker-radio'):[];
+    for(var i=0;i<radios.length;i++) radios[i].classList.remove('selected');
+  }
 }
 function showWarning(s){var e=document.getElementById('warn-'+s);if(e) e.classList.add('show');}
 function hideWarning(s){var e=document.getElementById('warn-'+s);if(e) e.classList.remove('show');}
@@ -3107,12 +3223,13 @@ function getReadinessLabel(score){
 }
 function getStrengths(){
   var s=[];
-  if(checkerInputs.gpa==='first') s.push('First Class academic record');
-  else if(checkerInputs.gpa==='upper') s.push('Strong 2:1 academic grade');
-  if(checkerInputs.workexp==='5plus') s.push('5+ years professional experience');
-  else if(checkerInputs.workexp==='2to5') s.push('2-5 years relevant experience — Chevening eligible');
-  if(checkerInputs.publications==='strong') s.push('Strong publication and awards portfolio');
-  else if(checkerInputs.publications==='some') s.push('Emerging recognition (awards/papers)');
+  var isUG = checkerInputs.level==='Undergraduate';
+  if(checkerInputs.gpa==='first') s.push(isUG ? 'Excellent secondary school results (Distinctions/A grades)' : 'First Class academic record');
+  else if(checkerInputs.gpa==='upper') s.push(isUG ? 'Good secondary school results (Credits/B grades)' : 'Strong 2:1 academic grade');
+  if(checkerInputs.workexp==='5plus') s.push(isUG ? 'Strong extracurriculars and leadership profile' : '5+ years professional experience');
+  else if(checkerInputs.workexp==='2to5') s.push(isUG ? 'Good extracurricular activities and community involvement' : '2-5 years relevant experience — Chevening eligible');
+  if(checkerInputs.publications==='strong') s.push(isUG ? 'Notable awards and recognitions' : 'Strong publication and awards portfolio');
+  else if(checkerInputs.publications==='some') s.push(isUG ? 'Some awards and school recognitions' : 'Emerging recognition (awards/papers)');
   if(checkerInputs.langTest&&checkerInputs.langTest!=='none'&&checkerInputs.langScore) s.push(checkerInputs.langTest+' '+checkerInputs.langScore+' certified');
   if(checkerInputs.level==='PhD') s.push('PhD-level candidate — strong TA/GA options');
   if(checkerInputs.budget==='mid'||checkerInputs.budget==='low') s.push('Realistic budget — many affordable options available');
@@ -3423,6 +3540,15 @@ async function runChecker(){
   document.getElementById('ai-summary-text').textContent=ai;
   showCheckerStep('results');
   document.getElementById('checker-step-label').textContent='Your results are ready';
+  // Scroll overlay + modal to top
+  setTimeout(function(){
+    var overlay = document.getElementById('checker-overlay');
+    var modal = document.querySelector('.checker-modal');
+    if(overlay) overlay.scrollTop = 0;
+    if(modal) modal.scrollTop = 0;
+    // On mobile, also scroll window to remove address bar
+    window.scrollTo(0, 1);
+  }, 100);
 }
 
 // ── POPULATE PREVIEW ─────────────────────────────────────────
