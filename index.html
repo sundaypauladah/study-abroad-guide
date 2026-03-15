@@ -244,9 +244,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 .step-content h3{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;color:var(--navy);margin-bottom:6px}
 .step-content p{font-size:13px;color:var(--slate);line-height:1.7}
 /* CHECKER */
-.checker-overlay{display:none;position:fixed;inset:0;background:rgba(10,22,40,.75);z-index:500;backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:12px;overflow:hidden}
+.checker-overlay{display:none;position:fixed;inset:0;background:rgba(10,22,40,.75);z-index:500;backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:24px;overflow-y:auto;overflow-x:hidden}
 .checker-overlay.open{display:flex}
-.checker-modal{background:white;border-radius:18px;width:calc(100% - 0px);max-width:min(640px,100vw);max-height:92vh;overflow-y:auto;overflow-x:hidden;box-shadow:0 32px 100px rgba(0,0,0,.35);animation:slideUp .25s ease}
+.checker-modal{background:white;border-radius:18px;width:100%;max-width:620px;max-height:88vh;overflow-y:auto;overflow-x:hidden;box-shadow:0 32px 100px rgba(0,0,0,.35);animation:slideUp .25s ease;margin:auto}
 .checker-header{background:var(--navy);padding:24px 28px 18px;border-radius:18px 18px 0 0;position:sticky;top:0;z-index:10}
 .checker-header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
 .checker-title{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:white}
@@ -816,7 +816,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 .funding-value{overflow-wrap:break-word;word-break:break-word;text-align:right;flex-shrink:0;max-width:120px}
 
 /* Checker modal */
-.checker-modal{max-width:640px;width:calc(100% - 24px)}
+.checker-modal{max-width:560px;width:calc(100% - 48px)}
 .step-q{overflow-wrap:break-word;word-break:break-word}
 
 /* Next actions */
@@ -1782,6 +1782,7 @@ html, body {
   .checker-modal {
     border-radius: 18px !important;
     max-height: 92vh !important;
+    max-width: 560px !important;
     overflow-y: auto !important;
   }
   .checker-header {
@@ -1792,6 +1793,64 @@ html, body {
 }
 /* ══ END CHECKER MODAL HEIGHT FIX ══════════════════════════════════════ */
 
+
+
+
+
+/* ── CHECKER MODAL — DESKTOP MAX WIDTH ── */
+@media (min-width: 768px) {
+  .checker-overlay {
+    padding: 40px 24px !important;
+    align-items: center !important;
+    overflow-y: auto !important;
+  }
+  .checker-modal {
+    border-radius: 18px !important;
+    max-width: 620px !important;
+    width: 100% !important;
+    min-height: auto !important;
+    max-height: 86vh !important;
+    height: auto !important;
+    display: block !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    margin: auto !important;
+  }
+  .checker-header {
+    border-radius: 18px 18px 0 0 !important;
+  }
+}
+@media (min-width: 1200px) {
+  .checker-modal {
+    max-width: 640px !important;
+  }
+}
+
+/* ══ CHECKER MODAL MAX-WIDTH FIX — desktop ══ */
+@media (min-width: 600px) {
+  .checker-overlay {
+    padding: 24px 16px !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .checker-modal {
+    width: calc(100% - 32px) !important;
+    max-width: 560px !important;
+    min-height: auto !important;
+    max-height: 88vh !important;
+    height: auto !important;
+    border-radius: 16px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    display: block !important;
+  }
+  .checker-header {
+    border-radius: 16px 16px 0 0 !important;
+    position: sticky !important;
+    top: 0 !important;
+  }
+}
+/* ══ END CHECKER MODAL FIX ══ */
 </style>
 </head>
 <body>
@@ -1807,10 +1866,9 @@ html, body {
     <h1>Find Affordable Universities <em>Anywhere in the World</em></h1>
     <p class="hero-sub">Free to $10,000/yr tuition. 34 countries. Scholarships, grants, assistantships, and student loans &mdash; all in one place.</p>
 
-    <button class="checker-hero-btn checker-hero-btn--pulse" onclick="openChecker()">
+        <button class="checker-hero-btn checker-hero-btn--pulse" onclick="openChecker()">
       &#127919; Check My Eligibility &amp; Get Matched &rarr;
     </button>
-
     <div class="hero-steps">
       <div class="hero-step"><span class="hero-step-num">1</span><span>Answer 8 questions</span></div>
       <div class="hero-step-arrow">&#8594;</div>
@@ -2231,7 +2289,7 @@ html, body {
                     <!-- CTA row -->
                     <div style="background:rgba(13,148,136,0.15);border-radius:8px;padding:10px 14px;margin-bottom:10px;">
                       <div>
-                        <div style="font-size:10px;font-weight:700;color:#5eead4;margin-bottom:3px;line-height:1.4;text-align:left;">Check your recommendations for free and also enter the Radius monthly study abroad giveaway</div>
+                        <div style="font-size:10px;font-weight:700;color:#5eead4;margin-bottom:3px;line-height:1.5;text-align:left;">Check your recommendations for free<br>and enter the Radius monthly study abroad giveaway</div>
                         <div style="font-size:9px;color:#64748b;text-align:left;">34 countries &middot; 140+ universities &middot; Free</div>
                         <div style="font-size:11px;font-weight:900;color:white;margin-top:3px;text-align:left;">withradius.com/guide</div>
                       </div>
@@ -2498,7 +2556,7 @@ html, body {
 
   <!-- CTA box -->
   <div style="background:rgba(13,148,136,.18);border-radius:10px;padding:14px 18px;margin-bottom:16px;">
-    <div style="font-size:11px;font-weight:700;color:#5eead4;margin-bottom:4px;line-height:1.5;">Check your recommendations for free and also enter the Radius monthly study abroad prize giveaway</div>
+    <div style="font-size:11px;font-weight:700;color:#5eead4;margin-bottom:4px;line-height:1.5;">Check your recommendations for free<br>and enter the Radius monthly study abroad giveaway</div>
     <div style="font-size:9px;color:#94a3b8;margin-bottom:6px;">34 countries &middot; 140+ universities &middot; Free</div>
     <div style="font-size:13px;font-weight:900;color:white;">withradius.com/guide</div>
   </div>
@@ -3869,6 +3927,9 @@ function init(){
   renderGrants(GRANTS);renderLoans();renderDeadlines(DEADLINES);renderReqs();renderGlossary();
 }
 init();
+
+
+
 
 
 
