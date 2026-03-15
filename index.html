@@ -30,9 +30,15 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 .checker-hero-btn{background:#0d9488;color:white;border:none;padding:14px 28px;border-radius:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;cursor:pointer;transition:opacity .2s,transform .15s}
 .checker-hero-btn:hover{opacity:.88;transform:translateY(-1px)}
 /* NAV */
-.nav-tabs{background:white;border-bottom:2px solid var(--mgray);position:sticky;top:52px;z-index:90;overflow-x:auto;scrollbar-width:none}
+.nav-tabs{background:white;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;position:relative}
 .nav-tabs::-webkit-scrollbar{display:none}
-.nav-tabs-inner{display:flex;max-width:1200px;margin:0 auto;padding:0 16px}
+.nav-tabs-inner{display:flex;max-width:1200px;margin:0 auto;padding:0 16px;position:relative}
+/* Scroll indicators */
+.nav-tabs-wrap{position:sticky;top:52px;z-index:90;background:white;border-bottom:2px solid var(--mgray);}
+.nav-scroll-left,.nav-scroll-right{display:none;position:absolute;top:0;bottom:0;width:36px;align-items:center;justify-content:center;z-index:10;cursor:pointer;font-size:14px;color:var(--navy);background:linear-gradient(to right,white 60%,rgba(255,255,255,0))}
+.nav-scroll-left{left:0;background:linear-gradient(to right,white 60%,rgba(255,255,255,0));padding-left:4px}
+.nav-scroll-right{right:0;background:linear-gradient(to left,white 60%,rgba(255,255,255,0));padding-right:4px}
+.nav-scroll-left.visible,.nav-scroll-right.visible{display:flex}
 .nav-tab{flex-shrink:0;padding:14px 18px;font-size:13px;font-weight:500;color:var(--gray);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap;font-family:'DM Sans',sans-serif}
 .nav-tab:hover{color:var(--navy)}.nav-tab.active{color:var(--navy);border-bottom-color:var(--blue-lt);font-weight:600}
 /* MAIN */
@@ -857,6 +863,76 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 
 /* ══ END OVERFLOW FIXES ═════════════════════════════════════════════════ */
 
+
+/* ══ MOBILE-FIRST NAV & LAYOUT ══════════════════════════════════════════ */
+@media(max-width:768px) {
+  /* Nav tabs bigger touch targets */
+  .nav-tab { padding:14px 14px; font-size:12px; }
+  /* Main padding tighter on mobile */
+  .main { padding:16px 14px 60px; }
+  /* Hero */
+  .hero { padding:36px 16px 32px; }
+  .hero h1 { font-size:22px; }
+  .hero-sub { font-size:13px; }
+  .checker-hero-btn--pulse { font-size:14px; padding:14px 20px; width:100%; text-align:center; }
+  .hero-steps { flex-direction:column; align-items:flex-start; gap:6px; }
+  .hero-step-arrow { transform:rotate(90deg); }
+  /* Topbar */
+  .topbar { padding:0 14px; }
+  .topbar-logo { font-size:15px; }
+  /* Section headers */
+  .section-header h2 { font-size:18px; }
+  /* Country/funding grids single col */
+  .country-grid { grid-template-columns:1fr; }
+  .funding-grid { grid-template-columns:1fr; }
+  /* Checker modal full screen */
+  .checker-overlay { padding:0; align-items:flex-end; }
+  .checker-modal { border-radius:16px 16px 0 0; max-height:92vh; max-width:100%; }
+  /* Results */
+  .result-score-top { flex-direction:column; gap:10px; }
+  .score-divider { width:100%; height:1px; }
+  .score-ring { width:110px; height:110px; }
+  .score-ring-num { font-size:26px; }
+  .sw-grid { grid-template-columns:1fr; }
+  .detail-grid { grid-template-columns:1fr 1fr; }
+  /* Breakdown button */
+  .btn-view-breakdown { font-size:13px; padding:12px 14px; }
+  .btn-download-pdf { font-size:13px; padding:11px 14px; }
+  /* Score card preview */
+  .sp-ring { width:60px; height:60px; }
+  .sp-ring-num { font-size:16px; }
+  .sp-scores { gap:8px; }
+  .sp-info { max-width:100%; }
+  /* Filter bar */
+  .filter-bar { flex-direction:column; }
+  .search-wrap { min-width:100%; }
+  .filter-select { width:100%; }
+  /* Loan body */
+  .loan-body { grid-template-columns:1fr 1fr; }
+  /* Radius section */
+  .radius-feat-grid { grid-template-columns:1fr; }
+  .radius-stats-row { gap:8px; }
+  .radius-stat-n { font-size:18px; }
+  .radius-help-inner { flex-direction:column; }
+  .radius-banner-right { align-items:flex-start; }
+  .radius-banner-stores { justify-content:flex-start; }
+  /* Welcome grid */
+  .welcome-grid,.how-to-cols { grid-template-columns:1fr; }
+  .welcome-stats { grid-template-columns:1fr 1fr; }
+  /* Table overflow */
+  .uni-table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+}
+
+/* Very small screens */
+@media(max-width:380px) {
+  .nav-tab { padding:12px 10px; font-size:11px; }
+  .hero h1 { font-size:20px; }
+  .score-ring { width:90px; height:90px; }
+  .score-ring-num { font-size:22px; }
+  .checker-chip { font-size:11px; padding:6px 10px; }
+}
+/* ══ END MOBILE-FIRST ═══════════════════════════════════════════════════ */
+
 </style>
 </head>
 <body>
@@ -888,7 +964,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
   </div>
 </div>
 
-<div class="nav-tabs">
+<div class="nav-tabs-wrap">
+<div class="nav-scroll-left" id="nav-scroll-left" onclick="navScrollLeft()">&#8249;</div>
+<div class="nav-scroll-right" id="nav-scroll-right" onclick="navScrollRight()">&#8250;</div>
+<div class="nav-tabs" id="nav-tabs-el">
   <div class="nav-tabs-inner">
     <div class="nav-tab active" onclick="showSection('welcome',this)">&#128075; Welcome</div>
     <div class="nav-tab" onclick="showSection('universities',this)">&#127891; Universities</div>
@@ -899,7 +978,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
     <div class="nav-tab" onclick="showSection('loans',this)">&#128179; Student Loans</div>
     <div class="nav-tab" onclick="showSection('requirements',this)">&#128203; Requirements</div>
     <div class="nav-tab" onclick="showSection('deadlines',this)">&#128197; Deadlines</div>
-  </div>
+    </div>
+</div>
 </div>
 
 <div class="main">
@@ -1574,7 +1654,11 @@ function showSection(id,tabEl){
   var tabs=document.querySelectorAll('.nav-tab');
   for(var i=0;i<tabs.length;i++) tabs[i].classList.remove('active');
   document.getElementById('sec-'+id).classList.add('active');
-  if(tabEl) tabEl.classList.add('active');
+  if(tabEl){
+    tabEl.classList.add('active');
+    tabEl.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+  }
+  updateNavIndicators();
 }
 
 // ── CHECKER OPEN/CLOSE ───────────────────────────────────────
@@ -2060,6 +2144,37 @@ function toggleBreakdownPanel() {
     }
   }
 }
+
+
+// ── NAV SCROLL INDICATORS ────────────────────────────────────────────────
+function updateNavIndicators() {
+  var nav = document.getElementById('nav-tabs-el');
+  var left = document.getElementById('nav-scroll-left');
+  var right = document.getElementById('nav-scroll-right');
+  if (!nav || !left || !right) return;
+  var canLeft = nav.scrollLeft > 4;
+  var canRight = nav.scrollLeft < (nav.scrollWidth - nav.clientWidth - 4);
+  left.classList.toggle('visible', canLeft);
+  right.classList.toggle('visible', canRight);
+}
+function navScrollLeft() {
+  var nav = document.getElementById('nav-tabs-el');
+  if (nav) { nav.scrollBy({ left: -120, behavior: 'smooth' }); setTimeout(updateNavIndicators, 300); }
+}
+function navScrollRight() {
+  var nav = document.getElementById('nav-tabs-el');
+  if (nav) { nav.scrollBy({ left: 120, behavior: 'smooth' }); setTimeout(updateNavIndicators, 300); }
+}
+window.addEventListener('load', function() {
+  var nav = document.getElementById('nav-tabs-el');
+  if (nav) {
+    nav.addEventListener('scroll', updateNavIndicators);
+    updateNavIndicators();
+    // On mobile, scroll active tab into view
+    var active = nav.querySelector('.nav-tab.active');
+    if (active) active.scrollIntoView({ inline: 'center', block: 'nearest' });
+  }
+});
 
 function toggleFundingOption(el, val) {
   el.classList.toggle('selected');
