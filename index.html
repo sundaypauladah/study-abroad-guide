@@ -36,10 +36,58 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 .nav-tabs-inner{display:flex;max-width:1200px;margin:0 auto;padding:0 16px;position:relative}
 /* Scroll indicators */
 .nav-tabs-wrap{position:sticky;top:52px;z-index:90;background:white;border-bottom:2px solid var(--mgray);width:100%;overflow:hidden;}
-.nav-scroll-left,.nav-scroll-right{display:none;position:absolute;top:0;bottom:0;width:36px;align-items:center;justify-content:center;z-index:10;cursor:pointer;font-size:14px;color:var(--navy);background:linear-gradient(to right,white 60%,rgba(255,255,255,0))}
-.nav-scroll-left{left:0;background:linear-gradient(to right,white 60%,rgba(255,255,255,0));padding-left:4px}
-.nav-scroll-right{right:0;background:linear-gradient(to left,white 60%,rgba(255,255,255,0));padding-right:4px}
-.nav-scroll-left.visible,.nav-scroll-right.visible{display:flex}
+.nav-scroll-left,.nav-scroll-right{
+  display:none;
+  position:absolute;
+  top:0;bottom:0;
+  width:48px;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
+  cursor:pointer;
+  opacity:0;
+  transition:opacity .25s ease;
+  pointer-events:none;
+}
+.nav-scroll-left{
+  left:0;
+  background:linear-gradient(to right,white 55%,rgba(255,255,255,0));
+  padding-left:6px;
+}
+.nav-scroll-right{
+  right:0;
+  background:linear-gradient(to left,white 55%,rgba(255,255,255,0));
+  padding-right:6px;
+}
+.nav-scroll-left.visible,.nav-scroll-right.visible{
+  display:flex;
+  opacity:1;
+  pointer-events:auto;
+}
+/* Arrow button inside */
+.nav-scroll-left .nav-arrow,.nav-scroll-right .nav-arrow{
+  width:28px;height:28px;
+  border-radius:50%;
+  background:var(--navy);
+  color:white;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:700;
+  box-shadow:0 2px 8px rgba(15,31,61,.25);
+  transition:transform .15s ease, background .15s ease;
+  user-select:none;
+  animation:navPulse 2s ease-in-out infinite;
+}
+.nav-scroll-left.visible .nav-arrow{animation-delay:0s}
+.nav-scroll-right.visible .nav-arrow{animation-delay:.3s}
+.nav-scroll-left:hover .nav-arrow,.nav-scroll-right:hover .nav-arrow{
+  transform:scale(1.15);
+  background:var(--teal-lt);
+  animation:none;
+}
+@keyframes navPulse{
+  0%,100%{transform:scale(1);box-shadow:0 2px 8px rgba(15,31,61,.25)}
+  50%{transform:scale(1.1);box-shadow:0 2px 14px rgba(13,148,136,.4)}
+}
 .nav-tab{flex-shrink:0;padding:14px 18px;font-size:13px;font-weight:500;color:var(--gray);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap;font-family:'DM Sans',sans-serif}
 .nav-tab:hover{color:var(--navy)}.nav-tab.active{color:var(--navy);border-bottom-color:var(--blue-lt);font-weight:600}
 /* MAIN */
@@ -1408,8 +1456,8 @@ html, body {
 </div>
 
 <div class="nav-tabs-wrap">
-<div class="nav-scroll-left" id="nav-scroll-left" onclick="navScrollLeft()">&#8249;</div>
-<div class="nav-scroll-right" id="nav-scroll-right" onclick="navScrollRight()">&#8250;</div>
+<div class="nav-scroll-left" id="nav-scroll-left" onclick="navScrollLeft()"><span class="nav-arrow">&#8249;</span></div>
+<div class="nav-scroll-right" id="nav-scroll-right" onclick="navScrollRight()"><span class="nav-arrow">&#8250;</span></div>
 <div class="nav-tabs" id="nav-tabs-el">
   <div class="nav-tabs-inner">
     <div class="nav-tab active" onclick="showSection('welcome',this)">&#128075; Welcome</div>
@@ -2602,11 +2650,27 @@ function updateNavIndicators() {
 }
 function navScrollLeft() {
   var nav = document.getElementById('nav-tabs-el');
-  if (nav) { nav.scrollBy({ left: -120, behavior: 'smooth' }); setTimeout(updateNavIndicators, 300); }
+  var btn = document.getElementById('nav-scroll-left');
+  if (nav) {
+    nav.scrollBy({ left: -140, behavior: 'smooth' });
+    setTimeout(updateNavIndicators, 300);
+  }
+  if (btn) {
+    var arrow = btn.querySelector('.nav-arrow');
+    if (arrow) { arrow.style.transform='scale(.85)'; setTimeout(function(){ arrow.style.transform=''; }, 150); }
+  }
 }
 function navScrollRight() {
   var nav = document.getElementById('nav-tabs-el');
-  if (nav) { nav.scrollBy({ left: 120, behavior: 'smooth' }); setTimeout(updateNavIndicators, 300); }
+  var btn = document.getElementById('nav-scroll-right');
+  if (nav) {
+    nav.scrollBy({ left: 140, behavior: 'smooth' });
+    setTimeout(updateNavIndicators, 300);
+  }
+  if (btn) {
+    var arrow = btn.querySelector('.nav-arrow');
+    if (arrow) { arrow.style.transform='scale(.85)'; setTimeout(function(){ arrow.style.transform=''; }, 150); }
+  }
 }
 window.addEventListener('load', function() {
   var nav = document.getElementById('nav-tabs-el');
