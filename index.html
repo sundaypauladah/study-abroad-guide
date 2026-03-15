@@ -1453,6 +1453,158 @@ html, body {
 
 /* ══ END SCORE RING TEXT FIT ════════════════════════════════════════ */
 
+
+/* ══ NAME MODAL + RESULTS OVERFLOW FIX ════════════════════════════════ */
+
+/* Name modal — slides up from bottom on mobile, no padding overflow */
+.name-modal-overlay {
+  padding: 0 !important;
+  align-items: flex-end !important;
+  overflow: hidden !important;
+}
+.name-modal {
+  border-radius: 20px 20px 0 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+}
+.name-modal-header {
+  padding: 18px 18px 14px !important;
+  border-radius: 20px 20px 0 0 !important;
+}
+.name-modal-title { font-size: 15px !important; }
+.name-modal-sub { font-size: 12px !important; }
+.name-modal-body { padding: 18px !important; }
+.name-modal-actions { padding-top: 14px !important; }
+
+@media (min-width: 520px) {
+  .name-modal-overlay { padding: 20px !important; align-items: center !important; }
+  .name-modal { border-radius: 16px !important; max-width: 480px !important; max-height: none !important; }
+  .name-modal-header { padding: 22px 26px 18px !important; border-radius: 16px 16px 0 0 !important; }
+  .name-modal-body { padding: 22px 26px !important; }
+}
+
+/* Results panel — prevent any overflow */
+#results-panel-main,
+#results-panel-breakdown,
+.checker-results,
+#checker-results-content {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+/* Result score header full containment */
+.result-score-header {
+  overflow: hidden !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 14px !important;
+}
+
+/* Score bars — label truncates, doesn't push width */
+.score-bar-row {
+  overflow: hidden !important;
+  min-width: 0 !important;
+}
+.score-bar-label {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+.score-bar-track { min-width: 0 !important; flex: 1 !important; overflow: hidden !important; }
+
+/* Share section containment */
+.share-section {
+  overflow: hidden !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 14px !important;
+}
+.share-preview {
+  overflow: hidden !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 12px !important;
+}
+
+/* Caption box */
+.caption-box {
+  overflow: hidden !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 12px 14px !important;
+}
+.caption-text {
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+  font-size: 12px !important;
+}
+
+/* Giveaway + video tip */
+.video-tip, .share-rules {
+  overflow: hidden !important;
+  max-width: 100% !important;
+  font-size: 11px !important;
+}
+
+/* Download buttons */
+.share-btn-main {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  font-size: 14px !important;
+  padding: 13px 16px !important;
+}
+.btn-view-breakdown, .btn-download-pdf {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* SW grid containment */
+.sw-grid {
+  overflow: hidden !important;
+  max-width: 100% !important;
+}
+.sw-card {
+  overflow: hidden !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  word-break: break-word !important;
+}
+
+/* Result country + sch cards */
+.result-country-card, .result-sch-card {
+  overflow: hidden !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+.result-uni-detail {
+  overflow: hidden !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+.detail-grid {
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+/* AI summary */
+.ai-summary {
+  overflow: hidden !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 14px !important;
+}
+
+/* ══ END NAME MODAL + RESULTS OVERFLOW FIX ═════════════════════════════ */
+
 </style>
 </head>
 <body>
