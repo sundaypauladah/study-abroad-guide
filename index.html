@@ -2,13 +2,66 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover,maximum-scale=1.0">
 <title>Radius · Affordable Universities for International Students</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
+
+/* ══════════════════════════════════════════════════════════
+   NUCLEAR CONTAINMENT — prevents ALL horizontal overflow
+   Applied before any other styles
+   ══════════════════════════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+}
+html {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  position: relative !important;
+}
+body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  position: relative !important;
+}
+
+/* Exceptions — elements that need fixed/absolute positioning or specific widths */
+img, svg, video, canvas, input, select, textarea, button {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+/* Positioned overlays are fine to be full-screen */
+.checker-overlay,
+.modal-overlay,
+.name-modal-overlay {
+  max-width: none !important;
+  width: 100vw !important;
+  overflow: hidden !important;
+}
+/* Sticky elements */
+.topbar, .nav-tabs-wrap {
+  max-width: none !important;
+  width: 100% !important;
+}
+/* Snapshot card is intentionally off-screen */
+#snapshot-card {
+  max-width: none !important;
+}
+/* Tables scroll internally */
+.uni-table-wrap,
+.uni-table,
+.deadline-table,
+.req-table {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  display: block !important;
+}
+/* ══ END NUCLEAR CONTAINMENT ═══════════════════════════════ */
 :root{--navy:#0f1f3d;--navy2:#1a3460;--blue:#1a4fb5;--blue-lt:#2563eb;--teal:#0c7e7e;--teal-lt:#0d9488;--green:#065f46;--green-lt:#059669;--slate:#374151;--gray:#6b7280;--lgray:#f3f4f6;--mgray:#e5e7eb;--dgray:#9ca3af;--white:#fff;--text:#111827;--bg:#f8fafc;--border:#e2e8f0}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{overflow-x:hidden;width:100%}
@@ -91,7 +144,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 .nav-tab{flex-shrink:0;padding:14px 18px;font-size:13px;font-weight:500;color:var(--gray);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap;font-family:'DM Sans',sans-serif}
 .nav-tab:hover{color:var(--navy)}.nav-tab.active{color:var(--navy);border-bottom-color:var(--blue-lt);font-weight:600}
 /* MAIN */
-.main{max-width:960px;margin:0 auto;padding:28px 16px 80px;width:100%}
+.main{max-width:min(960px,100%);margin:0 auto;padding:20px 16px 80px;width:100%}
 .section{display:none}.section.active{display:block}
 /* FILTERS */
 .filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;align-items:center;max-width:660px}
@@ -193,7 +246,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 /* CHECKER */
 .checker-overlay{display:none;position:fixed;inset:0;background:rgba(10,22,40,.75);z-index:500;backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:12px;overflow:hidden}
 .checker-overlay.open{display:flex}
-.checker-modal{background:white;border-radius:18px;width:100%;max-width:640px;max-height:90vh;overflow-y:auto;overflow-x:hidden;box-shadow:0 32px 100px rgba(0,0,0,.35);animation:slideUp .25s ease}
+.checker-modal{background:white;border-radius:18px;width:calc(100% - 0px);max-width:min(640px,100vw);max-height:92vh;overflow-y:auto;overflow-x:hidden;box-shadow:0 32px 100px rgba(0,0,0,.35);animation:slideUp .25s ease}
 .checker-header{background:var(--navy);padding:24px 28px 18px;border-radius:18px 18px 0 0;position:sticky;top:0;z-index:10}
 .checker-header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
 .checker-title{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:white}
@@ -201,7 +254,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 .checker-progress-wrap{background:rgba(255,255,255,.1);border-radius:4px;height:4px}
 .checker-progress-bar{background:#0d9488;height:4px;border-radius:4px;transition:width .3s ease}
 .checker-step-label{font-size:11px;color:#94a3b8;margin-top:8px}
-.checker-body{padding:28px}
+.checker-body{padding:20px 16px 24px}
 .checker-step{display:none}.checker-step.active{display:block}
 .step-q{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;color:var(--navy);margin-bottom:6px}
 .step-hint{font-size:13px;color:var(--gray);margin-bottom:20px}
@@ -214,7 +267,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 .checker-radio-dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--dgray);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .15s}
 .checker-radio.selected .checker-radio-dot{border-color:var(--teal-lt);background:var(--teal-lt)}
 .checker-radio.selected .checker-radio-dot::after{content:'';width:6px;height:6px;border-radius:50%;background:white}
-.checker-chip-group{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.checker-chip-group{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;max-width:100%;overflow:hidden}
 .checker-chip{padding:8px 16px;border:1.5px solid var(--border);border-radius:20px;font-size:13px;cursor:pointer;transition:all .15s;background:white;color:var(--slate);font-family:'DM Sans',sans-serif}
 .checker-chip:hover{border-color:var(--teal-lt);color:var(--teal)}.checker-chip.selected{background:var(--teal-lt);color:white;border-color:var(--teal-lt);font-weight:600}
 .checker-warning{display:none;background:#fef2f2;border:1.5px solid #fca5a5;border-radius:8px;padding:10px 14px;font-size:13px;color:#b91c1c;margin-top:12px;align-items:center;gap:8px}
@@ -1604,6 +1657,79 @@ html, body {
 }
 
 /* ══ END NAME MODAL + RESULTS OVERFLOW FIX ═════════════════════════════ */
+
+
+/* ══ FINAL MOBILE CATCH-ALL ════════════════════════════════
+   Last resort — ensure nothing bleeds outside viewport
+   ══════════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  /* All section content */
+  .section > * { max-width: 100% !important; overflow-x: hidden !important; }
+
+  /* All cards */
+  .country-card, .funding-card, .loan-card,
+  .result-country-card, .result-sch-card,
+  .sw-card, .step-card, .gloss-item, .tier-card,
+  .share-section, .share-preview, .caption-box,
+  .ai-summary, .next-actions, .video-tip,
+  .radius-section, .radius-feat-card,
+  .radius-banner, .welcome-letter,
+  .result-score-header, .result-uni-detail {
+    max-width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Checker */
+  .checker-overlay { padding: 0 !important; }
+  .checker-modal { width: 100% !important; margin: 0 !important; }
+  .checker-header, .checker-body { padding-left: 16px !important; padding-right: 16px !important; }
+
+  /* Name modal */
+  .name-modal { width: 100% !important; margin: 0 !important; }
+  .name-modal-header, .name-modal-body { padding-left: 16px !important; padding-right: 16px !important; }
+
+  /* Inputs never overflow */
+  .checker-input, .checker-select, .search-input, .filter-select {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Tables — force scroll not overflow */
+  table { min-width: 0 !important; }
+  .uni-table, .deadline-table, .req-table { min-width: 500px; }
+  .uni-table-wrap, .deadline-table, .req-table { overflow-x: auto !important; }
+
+  /* Radius section */
+  .radius-banner { flex-direction: column !important; }
+  .radius-stats-row { flex-wrap: wrap !important; }
+  .radius-stat-item { min-width: 40% !important; flex: 1 !important; }
+
+  /* Score bars */
+  .score-bar-row { gap: 8px !important; }
+  .score-bar-label { min-width: 80px !important; max-width: 90px !important; font-size: 9px !important; }
+
+  /* Nav */
+  .nav-tabs-inner { padding: 0 6px !important; }
+
+  /* Padding on all main sections */
+  .hero { padding: 32px 16px 28px !important; }
+  .main { padding: 16px 14px 60px !important; }
+  .section-header { max-width: 100% !important; }
+}
+
+@media (max-width: 380px) {
+  .hero { padding: 28px 12px 24px !important; }
+  .main { padding: 14px 12px 56px !important; }
+  .checker-header, .checker-body { padding-left: 14px !important; padding-right: 14px !important; }
+  .result-score-header { padding: 12px !important; }
+  .share-section { padding: 12px !important; }
+  .ai-summary { padding: 12px !important; }
+}
+/* ══ END FINAL MOBILE CATCH-ALL ═══════════════════════════ */
 
 </style>
 </head>
