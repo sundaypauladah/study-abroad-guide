@@ -1292,6 +1292,90 @@ html, body {
 
 /* ══ END MOBILE-FIRST ═══════════════════════════════════════════════════ */
 
+
+/* ══ SCORE HEADER MOBILE FIX ══════════════════════════════════════════ */
+
+/* Reset any conflicting rules */
+.result-score-top {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  margin-bottom: 14px !important;
+}
+
+/* Rings row — keep both rings side by side always */
+.score-ring-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 4px !important;
+  flex-shrink: 0 !important;
+  width: auto !important;
+}
+
+/* On mobile: smaller rings */
+.score-ring {
+  width: 80px !important;
+  height: 80px !important;
+  border-width: 5px !important;
+}
+.score-ring-num { font-size: 20px !important; }
+.score-ring-label { font-size: 7px !important; }
+.score-ring-sub { font-size: 7px !important; margin-top: 4px; }
+
+/* Divider — show as vertical line between rings */
+.score-divider {
+  display: block !important;
+  width: 1px !important;
+  height: 80px !important;
+  align-self: center !important;
+}
+
+/* Info block takes remaining width */
+.score-info {
+  flex: 1 !important;
+  min-width: 140px !important;
+  overflow: hidden !important;
+}
+
+.score-headline { font-size: 12px !important; }
+.score-sub { font-size: 11px !important; }
+.score-badge { font-size: 10px !important; padding: 3px 9px !important; }
+
+/* Score bars */
+.score-bars { gap: 8px !important; margin-top: 10px !important; padding-top: 10px !important; }
+.score-bar-label {
+  font-size: 9px !important;
+  min-width: 90px !important;
+  max-width: 100px !important;
+  white-space: nowrap !important;
+}
+.score-bar-pct { font-size: 11px !important; min-width: 30px !important; }
+.score-bar-track { height: 5px !important; }
+
+/* At 480px+: bigger rings */
+@media (min-width: 480px) {
+  .score-ring { width: 110px !important; height: 110px !important; border-width: 6px !important; }
+  .score-ring-num { font-size: 26px !important; }
+  .score-ring-label { font-size: 8px !important; }
+  .score-divider { height: 100px !important; }
+  .score-headline { font-size: 13px !important; }
+  .score-bar-label { font-size: 10px !important; min-width: 110px !important; }
+  .score-bar-pct { font-size: 12px !important; }
+}
+
+@media (min-width: 640px) {
+  .score-ring { width: 140px !important; height: 140px !important; }
+  .score-ring-num { font-size: 30px !important; }
+  .score-ring-label { font-size: 9px !important; }
+  .score-divider { height: 130px !important; }
+  .score-bar-label { font-size: 11px !important; min-width: 130px !important; }
+}
+
+/* ══ END SCORE HEADER MOBILE FIX ═══════════════════════════════════════ */
+
 </style>
 </head>
 <body>
