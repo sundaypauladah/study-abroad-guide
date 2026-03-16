@@ -3574,7 +3574,7 @@ async function getAISummary(cr,sr){
     +'Funding: '+checkerInputs.funding+'. Matched: '+topC+'. '+(topS?'Scholarships: '+topS+'. ':'')
     +'Write a warm, direct, 3-4 sentence personalised summary. Mention strongest options, one first action, one deadline warning. No bullet points. Do not start with Based on your profile.';
   try{
-    var res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:prompt}]})});
+    var res=await fetch('/api/ai-summary',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:prompt}]})});
     var d=await res.json();var txt='';
     if(d.content) for(var i=0;i<d.content.length;i++){if(d.content[i].type==='text') txt+=d.content[i].text;}
     return txt||'Your profile matches well with the countries shown. Check scholarship deadlines — they close months before university admissions.';
