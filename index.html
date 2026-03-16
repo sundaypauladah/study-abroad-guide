@@ -285,9 +285,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 .score-card-label{font-size:11px;font-weight:700;color:#16a34a;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #e8e0d0}
 .result-score-top{display:flex;align-items:center;gap:16px;margin-bottom:16px;flex-wrap:wrap}
 .score-ring-wrap{display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0}
-.score-ring{width:160px;height:160px;border-radius:50%;border:7px solid rgba(255,255,255,.12);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;flex-shrink:0}
+.score-ring{width:130px;height:130px;border-radius:50%;border:6px solid rgba(255,255,255,.12);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;flex-shrink:0}
 .score-ring-label{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#94a3b8;font-weight:700;margin-bottom:6px}
-.score-ring-num{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;line-height:1;white-space:nowrap}
+.score-ring-num{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;line-height:1;white-space:nowrap}
 .score-ring-sub{font-size:10px;color:#94a3b8;text-align:center;text-transform:uppercase;letter-spacing:.5px;margin-top:6px}
 .score-divider{width:1px;height:145px;background:rgba(255,255,255,.1);flex-shrink:0}
 .score-info{flex:1;min-width:0;overflow:hidden}
@@ -1851,6 +1851,16 @@ html, body {
   }
 }
 /* ══ END CTA BUTTON MOBILE FIX ══ */
+
+/* ══ SCORE RING MOBILE FIX ══ */
+@media (max-width: 480px) {
+  .score-ring { width: 100px !important; height: 100px !important; border-width: 5px !important; }
+  .score-ring-num { font-size: 20px !important; }
+  .score-ring-label { font-size: 8px !important; }
+  .result-score-top { gap: 8px !important; }
+  .score-ring-wrap { flex-shrink: 0 !important; }
+}
+/* ══ END SCORE RING MOBILE FIX ══ */
 </style>
 </head>
 <body>
@@ -1931,6 +1941,7 @@ html, body {
           <tr><td class="qr-goal">Post-study visa</td><td class="qr-tabs">UK (2yr), Canada (3yr), Ireland (24mo), Australia (2-4yr)</td></tr>
           <tr><td class="qr-goal">No IELTS needed</td><td class="qr-tabs">Germany (German-taught), Turkey, Malaysia (some)</td></tr>
           <tr><td class="qr-goal">Best for PhD</td><td class="qr-tabs">USA (TA/RA), Germany, Netherlands, Sweden</td></tr>
+          <tr><td class="qr-goal">Student Loans</td><td class="qr-tabs">Passage, MPOWER, Monivest &amp; Prodigy Finance</td></tr>
         </table>
       </div>
     </div>
@@ -3808,18 +3819,34 @@ function shareScore(platform){
 }
 function copyCaption(){
   var el=document.getElementById('share-caption-text');
-  var text=el?el.textContent:'Check your study abroad eligibility for free at withradius.com/guide @radius_hq #RadiusScholar';
-  fallbackCopy(text,'Caption copied! Paste it when you share your score card.');
+  var text=el?(el.innerText||el.textContent):'Check your study abroad eligibility for free at withradius.com/guide @radius_hq #RadiusScholar';
+  if(navigator.clipboard&&navigator.clipboard.writeText&&window.isSecureContext){
+    navigator.clipboard.writeText(text).then(function(){showShareCopied('Caption copied! Paste it when you share your score card.');}).catch(function(){legacyCopy(text,'Caption copied! Paste it when you share your score card.');});
+  } else {
+    legacyCopy(text,'Caption copied! Paste it when you share your score card.');
+  }
 }
 function fallbackCopy(text,msg){
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(function(){showShareCopied(msg);}).catch(function(){legacyCopy(text,msg);});}
   else{legacyCopy(text,msg);}
 }
 function legacyCopy(text,msg){
-  var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
-  document.body.appendChild(ta);ta.focus();ta.select();
-  try{document.execCommand('copy');showShareCopied(msg);}catch(e){}
+  var ta=document.createElement('textarea');
+  ta.value=text;
+  ta.style.cssText='position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:200px;height:80px;opacity:0.01;z-index:99999;font-size:16px;';
+  document.body.appendChild(ta);
+  ta.focus();
+  // iOS Safari requires setSelectionRange after focus
+  ta.setSelectionRange(0, 99999);
+  var success=false;
+  try{success=document.execCommand('copy');}catch(e){}
   document.body.removeChild(ta);
+  if(success){
+    showShareCopied(msg);
+  } else {
+    // Last resort: show text for manual copy on iOS
+    prompt('Copy this caption:', text);
+  }
 }
 function showShareCopied(msg){
   var el=document.getElementById('share-copied');
