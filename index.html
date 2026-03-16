@@ -3995,35 +3995,45 @@ function shareScore(platform){
 }
 function copyCaption(){
   var el=document.getElementById('share-caption-text');
-  var text=el?(el.innerText||el.textContent):'Check your study abroad eligibility for free at withradius.com/guide @radius_hq #RadiusScholar';
-  if(navigator.clipboard&&navigator.clipboard.writeText&&window.isSecureContext){
-    navigator.clipboard.writeText(text).then(function(){showShareCopied('Caption copied! Paste it when you share your score card.');}).catch(function(){legacyCopy(text,'Caption copied! Paste it when you share your score card.');});
+  // Use innerText to preserve line breaks; decode HTML entities naturally
+  var text=el?(el.innerText||el.textContent||''):'';
+  if(!text.trim()) text='I just checked my Study Abroad & Scholarship eligibility on Radius. Check yours free at withradius.com/guide #RadiusScholar @radius_hq';
+  var msg='Caption copied! Paste it with your score card.';
+  // Strategy 1: Modern Clipboard API (works on HTTPS)
+  if(navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function(){
+      showShareCopied(msg);
+    }).catch(function(){
+      _execCopy(text, msg);
+    });
+    return;
+  }
+  _execCopy(text, msg);
+}
+function _execCopy(text, msg) {
+  // Strategy 2: execCommand (works on most browsers incl. iOS Safari)
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.cssText = 'position:fixed;top:0;left:0;width:2px;height:2px;padding:0;border:none;outline:none;box-shadow:none;background:transparent;font-size:16px;';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  ta.setSelectionRange(0, 99999);
+  var ok = false;
+  try { ok = document.execCommand('copy'); } catch(e) {}
+  document.body.removeChild(ta);
+  if (ok) {
+    showShareCopied(msg);
   } else {
-    legacyCopy(text,'Caption copied! Paste it when you share your score card.');
+    // Strategy 3: show text for manual copy
+    window.prompt('Copy this caption (Ctrl+C / Cmd+C):', text);
   }
 }
 function fallbackCopy(text,msg){
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(function(){showShareCopied(msg);}).catch(function(){legacyCopy(text,msg);});}
   else{legacyCopy(text,msg);}
 }
-function legacyCopy(text,msg){
-  var ta=document.createElement('textarea');
-  ta.value=text;
-  ta.style.cssText='position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:200px;height:80px;opacity:0.01;z-index:99999;font-size:16px;';
-  document.body.appendChild(ta);
-  ta.focus();
-  // iOS Safari requires setSelectionRange after focus
-  ta.setSelectionRange(0, 99999);
-  var success=false;
-  try{success=document.execCommand('copy');}catch(e){}
-  document.body.removeChild(ta);
-  if(success){
-    showShareCopied(msg);
-  } else {
-    // Last resort: show text for manual copy on iOS
-    prompt('Copy this caption:', text);
-  }
-}
+// legacyCopy replaced by _execCopy
 function showShareCopied(msg){
   var el=document.getElementById('share-copied');
   if(el){el.textContent=msg||'Copied!';el.style.display='block';setTimeout(function(){el.style.display='none';},5000);}
