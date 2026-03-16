@@ -358,9 +358,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 .share-preview{background:#0f1f3d;border-radius:14px;padding:20px;border:1px solid rgba(255,255,255,.08)}
 .sp-badge{display:inline-block;width:fit-content;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;background:#dcfce7;color:#16a34a;border:1.5px solid #16a34a}
 .sp-scores{display:flex;align-items:center;gap:16px;margin-bottom:16px;flex-wrap:wrap}
-.sp-ring{width:80px;height:80px;border-radius:50%;border:4px solid #16a34a;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
-.sp-ring-label{font-size:8px;color:#6b7c68;text-transform:uppercase;letter-spacing:.8px;font-weight:700;margin-bottom:2px}
-.sp-ring-num{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#059669;line-height:1}
+.sp-ring{width:90px;height:90px;border-radius:50%;border:4px solid #16a34a;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.sp-ring-label{font-size:7px;color:#6b7c68;text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin-bottom:2px;white-space:nowrap}
+.sp-ring-num{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#059669;line-height:1;white-space:nowrap}
 .sp-divider{width:1px;height:70px;background:#e8e0d0;flex-shrink:0}
 .sp-info{flex:1;min-width:0;max-width:calc(100% - 200px);display:flex;flex-direction:column;justify-content:center;text-align:left;overflow:hidden}
 .sp-profile{font-family:'Syne',sans-serif;font-size:10px;font-weight:500;color:#e2e8f0;margin-bottom:5px;line-height:1.6;text-align:left;overflow-wrap:break-word;word-break:break-word}
@@ -1901,6 +1901,40 @@ html, body {
   }
 }
 /* ══ END MOBILE HERO SPACING FIX ══ */
+
+/* ══ SCORE CARD PREVIEW RING FIX ══ */
+@media (max-width: 480px) {
+  .sp-ring { width: 80px !important; height: 80px !important; }
+  .sp-ring-num { font-size: 14px !important; }
+  .sp-ring-label { font-size: 6px !important; letter-spacing: 0.3px !important; }
+  .sp-scores { gap: 8px !important; }
+}
+/* ══ END SCORE CARD PREVIEW RING FIX ══ */
+
+/* ══ SP-RING FINAL OVERRIDE ══ */
+.sp-ring {
+  width: 88px !important;
+  height: 88px !important;
+  border-width: 4px !important;
+  padding: 4px !important;
+  box-sizing: border-box !important;
+}
+.sp-ring-num {
+  font-size: 15px !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+.sp-ring-label {
+  font-size: 7px !important;
+  letter-spacing: 0.3px !important;
+  white-space: nowrap !important;
+  margin-bottom: 3px !important;
+}
+@media (max-width: 400px) {
+  .sp-ring { width: 76px !important; height: 76px !important; }
+  .sp-ring-num { font-size: 14px !important; }
+}
+/* ══ END SP-RING FINAL OVERRIDE ══ */
 </style>
 </head>
 <body>
@@ -2356,9 +2390,9 @@ html, body {
                     <div class="sp-badge" id="sp-badge">Excellent</div>
                   </div>
                   <div class="sp-scores">
-                    <div class="sp-ring" id="sp-ring-1"><div class="sp-ring-label">Readiness</div><div class="sp-ring-num" id="sp-num-1">&mdash;</div></div>
+                    <div class="sp-ring" id="sp-ring-1"><div class="sp-ring-label">Ready</div><div class="sp-ring-num" id="sp-num-1">&mdash;</div></div>
                     <div class="sp-divider"></div>
-                    <div class="sp-ring" id="sp-ring-2"><div class="sp-ring-label">Scholarship</div><div class="sp-ring-num" id="sp-num-2">&mdash;</div></div>
+                    <div class="sp-ring" id="sp-ring-2"><div class="sp-ring-label">Sch. Odds</div><div class="sp-ring-num" id="sp-num-2">&mdash;</div></div>
                     <div class="sp-info">
                       <div class="sp-profile" id="sp-profile">&mdash;</div>
                       <div id="sp-matched" style="font-size:11px;color:#5eead4;font-weight:700;margin-top:4px;line-height:1.6;text-align:left">&mdash;</div>
