@@ -72,16 +72,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 .topbar-logo span{background:var(--teal-lt);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:1px;text-transform:uppercase}
 .topbar-link{color:#94a3b8;font-size:13px;text-decoration:none}.topbar-link:hover{color:white}
 /* HERO */
-.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 60%,#1e3a8a 100%);color:white;padding:72px 0 64px;position:relative;overflow:hidden;width:100%;box-sizing:border-box}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 60%,#1e3a8a 100%);color:white;padding:56px 0 48px;position:relative;overflow:hidden;width:100%;box-sizing:border-box}
 .hero-inner{max-width:1200px;margin:0 auto;position:relative}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:7px 18px;font-size:14px;font-weight:500;margin-bottom:24px}
-.hero h1{font-family:'Syne',sans-serif;font-size:clamp(32px,4.5vw,56px);font-weight:800;line-height:1.15;margin-bottom:18px;letter-spacing:-1px}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:500;margin-bottom:20px}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(22px,3.5vw,36px);font-weight:800;line-height:1.2;margin-bottom:14px;letter-spacing:-0.5px}
 .hero h1 em{font-style:normal;color:#5eead4}
-.hero-sub{font-size:18px;color:#94a3b8;max-width:680px;margin-bottom:28px;font-weight:300;line-height:1.7}
+.hero-sub{font-size:14px;color:#94a3b8;max-width:620px;margin-bottom:22px;font-weight:300;line-height:1.7}
 .hero-stats{display:flex;flex-wrap:wrap;gap:32px;margin-bottom:0;padding-top:18px;border-top:1px solid rgba(255,255,255,.1)}
 .hero-stat-n{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:#5eead4;line-height:1}
 .hero-stat-l{font-size:12px;color:#94a3b8;margin-top:3px}
-.checker-hero-btn{background:#0d9488;color:white;border:none;padding:18px 36px;border-radius:12px;font-family:'Syne',sans-serif;font-weight:700;font-size:18px;cursor:pointer;transition:opacity .2s,transform .15s}
+.checker-hero-btn{background:#0d9488;color:white;border:none;padding:14px 28px;border-radius:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;cursor:pointer;transition:opacity .2s,transform .15s}
 .checker-hero-btn:hover{opacity:.88;transform:translateY(-1px)}
 /* NAV */
 .nav-tabs{background:white;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;position:relative}
@@ -203,7 +203,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 .funding-body{font-size:13px;color:var(--slate);line-height:1.6;margin-bottom:10px}
 .funding-eligible{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
 .elig-badge{font-size:11px;padding:3px 9px;border-radius:20px;font-weight:600}
-.elig-yes{background:#d1fae5;color:#065f46}.elig-no{background:#fee2e2;color:#991b1b}.elig-check{background:#fef3c7;color:#92400e}
+.elig-yes{background:#d1fae5;color:#065f46}.elig-pass{background:#bbf7d0 !important;color:#14532d !important;font-weight:700 !important}.elig-no{background:#fee2e2;color:#991b1b}.elig-check{background:#fef3c7;color:#92400e}
 .apply-link{display:inline-block;margin-top:10px;font-size:12px;color:var(--blue-lt);text-decoration:none;font-weight:500}.apply-link:hover{text-decoration:underline}
 /* LOANS */
 .loan-card{background:white;border:1.5px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:16px;max-width:780px}
@@ -737,10 +737,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);fon
 
 /* ── HERO REVAMP ── */
 .checker-hero-btn--pulse {
-  font-size:18px;
-  padding:18px 40px;
+  font-size:16px;
+  padding:16px 36px;
   border-radius:12px;
-  margin-bottom:28px;
+  margin-bottom:24px;
   animation:heroPulse 2.5s ease-in-out infinite;
 }
 @keyframes heroPulse {
@@ -1796,101 +1796,40 @@ html, body {
 
 
 
-/* ══ CHECKER MODAL MAX-WIDTH FIX — desktop ══ */
+/* ══ CHECKER MODAL FIX ══ */
 @media (min-width: 600px) {
-  .checker-overlay {
-    padding: 24px 16px !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-  .checker-modal {
-    width: calc(100% - 32px) !important;
-    max-width: 560px !important;
-    min-height: auto !important;
-    max-height: 88vh !important;
-    height: auto !important;
-    border-radius: 16px !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    display: block !important;
-  }
-  .checker-header {
-    border-radius: 16px 16px 0 0 !important;
-    position: sticky !important;
-    top: 0 !important;
-  }
+  .checker-overlay { padding: 24px 16px !important; align-items: center !important; justify-content: center !important; }
+  .checker-modal { width: calc(100% - 32px) !important; max-width: 560px !important; min-height: auto !important; max-height: 88vh !important; height: auto !important; border-radius: 16px !important; overflow-y: auto !important; }
+  .checker-header { border-radius: 16px 16px 0 0 !important; position: sticky !important; top: 0 !important; }
 }
-/* ══ END CHECKER MODAL MAX-WIDTH FIX ══ */
-
-/* ══ CONTENT WIDTH ALIGNMENT WITH NAV TABS ══ */
-.main {
-  max-width: 1200px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
-/* ── HERO INNER PADDING MATCH ── */
-.hero-inner {
-  padding-left: 16px !important;
-  padding-right: 16px !important;
-}
-@media (min-width: 640px) {
-  .hero-inner {
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-  }
-}
-/* ══ END CONTENT WIDTH ══ */
-
-/* ══ HERO SIZE OVERRIDE ══ */
-.hero {
-  padding: 64px 0 56px !important;
-}
-.hero-inner {
-  max-width: 760px !important;
-  margin-left: 0 !important;
-  margin-right: auto !important;
-}
-.hero-badge {
-  font-size: 13px !important;
-  padding: 6px 16px !important;
-  margin-bottom: 20px !important;
-}
-.hero h1 {
-  font-size: 34px !important;
-  line-height: 1.15 !important;
-  margin-bottom: 16px !important;
-  letter-spacing: -0.5px !important;
-}
-.hero-sub {
-  font-size: 16px !important;
-  line-height: 1.7 !important;
-  margin-bottom: 28px !important;
-  max-width: 560px !important;
-}
-.checker-hero-btn--pulse {
-  font-size: 16px !important;
-  padding: 15px 32px !important;
-  border-radius: 12px !important;
-  margin-bottom: 24px !important;
-}
-.hero-step {
-  font-size: 13px !important;
-}
-.hero-step-num {
-  width: 24px !important;
-  height: 24px !important;
-  font-size: 12px !important;
-}
+/* ══ CONTENT WIDTH ══ */
+.main { max-width: 1200px !important; margin-left: auto !important; margin-right: auto !important; width: 100% !important; box-sizing: border-box !important; }
+.hero-inner { max-width: 760px !important; margin-left: 0 !important; padding-left: 16px !important; padding-right: 16px !important; }
+.hero { padding: 64px 0 56px !important; }
+.hero h1 { font-size: 34px !important; line-height: 1.15 !important; }
+.hero-sub { font-size: 16px !important; }
+.checker-hero-btn--pulse { font-size: 16px !important; padding: 15px 32px !important; }
 @media (max-width: 768px) {
-  .hero { padding: 44px 0 40px !important; }
   .hero-inner { max-width: 100% !important; }
-  .hero h1 { font-size: 28px !important; }
-  .hero-sub { font-size: 14px !important; }
-  .checker-hero-btn--pulse { font-size: 15px !important; padding: 14px 24px !important; width: 100% !important; }
+  .hero h1 { font-size: 26px !important; }
 }
-/* ══ END HERO SIZE OVERRIDE ══ */
+/* ══ END ══ */
+
+/* ── WATCH OUT SECTION ── */
+.watchout-section{margin:16px 0 24px;}
+.watchout-title{font-size:11px;font-weight:800;color:#f59e0b;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+.watchout-item{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:10px;margin-bottom:10px;border-left:4px solid #f59e0b;background:#1e293b;}
+.watchout-item.red{border-left-color:#ef4444;background:#1f1315;}
+.watchout-item.blue{border-left-color:#3b82f6;background:#111827;}
+.watchout-icon{font-size:18px;flex-shrink:0;margin-top:2px;}
+.watchout-item-content{flex:1;}
+.watchout-item-title{font-size:12px;font-weight:700;color:#fcd34d;margin-bottom:4px;}
+.watchout-item.red .watchout-item-title{color:#fca5a5;}
+.watchout-item.blue .watchout-item-title{color:#93c5fd;}
+.watchout-text{font-size:12px;color:#cbd5e1;line-height:1.65;}
+.watchout-icon{font-size:16px;flex-shrink:0;margin-top:1px;}
+.watchout-text{font-size:12px;color:#cbd5e1;line-height:1.6;}
+.watchout-text strong{color:#f1f5f9;}
 </style>
 </head>
 <body>
@@ -1949,9 +1888,9 @@ html, body {
       <div class="letter-body">
         <p>In 2014, I almost lost my admission to a US university because my tuition payment didn&apos;t arrive on time. I wasn&apos;t broke &mdash; the money existed, but the international payment system failed me. That experience became the founding force behind Radius. If a guide like this had existed, I could have found other funding options while waiting for my funds to clear.</p>
         <p>This guide exists because too many current and potential international students are missing out on opportunities for global quality education. Some believe studying abroad is too expensive. Others are paying for information that should be free. Scholarship lists, country guides, application advice: students deserve access to all of it simply because they want to study abroad, not because they can afford to pay for it.</p>
-        <p>Everything here is free. 34 countries. 140+ universities. 60+ scholarships and grants. 12 student loan providers. Verified deadlines and requirements. No paywall. No email required to browse.</p>
-        <p>Use it. Share it. And when you need to pay tuition and fees internationally without FX delays, that&apos;s what Radius is for. Download the app and join a growing community of over 120,000 international students &mdash; and refer friends to earn from every transaction they complete on Radius.</p>
-        <p>I hope to see you onboard someday. Find me on the Radius community or across social media by searching my full name.</p>
+        <p>Everything in this guide is free. 34 countries. 140+ universities. 60+ scholarships and grants. 12 student loan providers. Verified deadlines and requirements. No paywall, no email required to browse.</p>
+        <p>Use it. Share it. And if you ever need to pay tuition and fees internationally without FX delays, that&apos;s what Radius is for. You can also download the app to join a growing community of over 120,000 international students around the world &mdash; and refer your friends to earn from every transaction they complete on Radius.</p>
+        <p>I&apos;d love to see you onboard someday. Feel free to connect with me on the Radius community or across my various social media accounts by searching for my full name below.</p>
         <p style="margin-bottom:4px">Cheers!</p>
         <div class="letter-sig">Sunday Paul Adah <span>&mdash; Founder &amp; CEO, <a href="https://withradius.com" target="_blank">Radius</a></span></div>
       </div>
@@ -2048,6 +1987,7 @@ html, body {
 <div class="section" id="sec-loans">
   <div class="section-header"><h2>&#128179; Student Loans Without a Cosigner</h2><p>Private lenders offering loans to international students with no cosigner or collateral required.</p></div>
   <div class="warning-banner"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg><span>Always exhaust scholarship and grant options before taking a student loan. Compare rates carefully.</span></div>
+  <div class="warning-banner" style="background:#eff6ff;border-color:#bfdbfe;color:#1e40af;margin-top:10px;"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg><span>💡 <strong>STEM, Business and MBA students</strong> stand a significantly higher chance of loan approval and better rates with most international student loan providers.</div>
   <div id="loans-container"></div>
 </div>
 
@@ -2099,6 +2039,19 @@ html, body {
         <div class="checker-nav"><span></span><button class="btn-next" onclick="nextStep(1)">Next &#x2192;</button></div>
       </div>
       <div class="checker-step" id="cstep-2">
+        <div class="step-q">How old are you?</div>
+        <div class="step-hint">This helps us flag age-specific scholarships and loan eligibility.</div>
+        <div class="checker-radio-group">
+          <label class="checker-radio" onclick="selectRadio(this,'age','under18')"><span class="checker-radio-dot"></span> Under 18</label>
+          <label class="checker-radio" onclick="selectRadio(this,'age','18-24')"><span class="checker-radio-dot"></span> 18 – 24</label>
+          <label class="checker-radio" onclick="selectRadio(this,'age','25-30')"><span class="checker-radio-dot"></span> 25 – 30</label>
+          <label class="checker-radio" onclick="selectRadio(this,'age','31-40')"><span class="checker-radio-dot"></span> 31 – 40</label>
+          <label class="checker-radio" onclick="selectRadio(this,'age','over40')"><span class="checker-radio-dot"></span> Over 40</label>
+        </div>
+        <div class="checker-warning" id="warn-2"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg> Please select your age range.</div>
+        <div class="checker-nav"><button class="btn-back" onclick="prevStep(2)">&#x2190; Back</button><button class="btn-next" onclick="nextStep(2)">Next &#x2192;</button></div>
+      </div>
+      <div class="checker-step" id="cstep-3">
         <div class="step-q">What level are you applying for?</div>
         <div class="step-hint">This filters universities and scholarships to those relevant to your stage.</div>
         <div class="checker-radio-group">
@@ -2106,10 +2059,10 @@ html, body {
           <label class="checker-radio" onclick="selectRadio(this,'level','Masters')"><span class="checker-radio-dot"></span> &#128218; Master&apos;s / MBA</label>
           <label class="checker-radio" onclick="selectRadio(this,'level','PhD')"><span class="checker-radio-dot"></span> &#128300; PhD / Doctorate</label>
         </div>
-        <div class="checker-warning" id="warn-2"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg> Please select your degree level.</div>
-        <div class="checker-nav"><button class="btn-back" onclick="prevStep(2)">&#x2190; Back</button><button class="btn-next" onclick="nextStep(2)">Next &#x2192;</button></div>
+        <div class="checker-warning" id="warn-3"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg> Please select your degree level.</div>
+        <div class="checker-nav"><button class="btn-back" onclick="prevStep(3)">&#x2190; Back</button><button class="btn-next" onclick="nextStep(3)">Next &#x2192;</button></div>
       </div>
-      <div class="checker-step" id="cstep-3">
+      <div class="checker-step" id="cstep-4">
         <div class="step-q">What do you want to study?</div>
         <div class="step-hint">Select all fields you are interested in. You can choose more than one.</div>
         <div class="checker-chip-group" id="field-chips">
@@ -2124,10 +2077,10 @@ html, body {
           <div class="checker-chip" onclick="toggleField(this,'Arts &amp; Design')">Arts &amp; Design</div>
           <div class="checker-chip" onclick="toggleField(this,'Education')">Education</div>
         </div>
-        <div class="checker-warning" id="warn-3"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg> Please select at least one field.</div>
-        <div class="checker-nav"><button class="btn-back" onclick="prevStep(3)">&#x2190; Back</button><button class="btn-next" onclick="nextStep(3)">Next &#x2192;</button></div>
+        <div class="checker-warning" id="warn-4"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg> Please select at least one field.</div>
+        <div class="checker-nav"><button class="btn-back" onclick="prevStep(4)">&#x2190; Back</button><button class="btn-next" onclick="nextStep(4)">Next &#x2192;</button></div>
       </div>
-      <div class="checker-step" id="cstep-4">
+      <div class="checker-step" id="cstep-5">
         <div class="step-q">What&apos;s your annual tuition budget?</div>
         <div class="step-hint">Excluding scholarships. This is what you could pay if you needed to self-fund.</div>
         <div class="checker-radio-group">
@@ -2136,10 +2089,10 @@ html, body {
           <label class="checker-radio" onclick="selectRadio(this,'budget','mid')"><span class="checker-radio-dot"></span> &#x1F4CA; $5,000&ndash;$10,000/yr</label>
           <label class="checker-radio" onclick="selectRadio(this,'budget','any')"><span class="checker-radio-dot"></span> &#127891; Scholarship-only &mdash; I need full funding</label>
         </div>
-        <div class="checker-warning" id="warn-4"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg> Please select your budget.</div>
-        <div class="checker-nav"><button class="btn-back" onclick="prevStep(4)">&#x2190; Back</button><button class="btn-next" onclick="nextStep(4)">Next &#x2192;</button></div>
+        <div class="checker-warning" id="warn-5"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg> Please select your budget.</div>
+        <div class="checker-nav"><button class="btn-back" onclick="prevStep(5)">&#x2190; Back</button><button class="btn-next" onclick="nextStep(5)">Next &#x2192;</button></div>
       </div>
-      <div class="checker-step" id="cstep-5">
+      <div class="checker-step" id="cstep-6">
         <div class="step-q">Where do you want to study?</div>
         <div class="step-hint">Select all regions you&apos;re open to.</div>
         <div class="checker-chip-group" id="region-chips">
@@ -2149,10 +2102,10 @@ html, body {
           <div class="checker-chip" onclick="toggleChip(this,'regions','Latin America')">&#127758; Latin America</div>
           <div class="checker-chip selected" onclick="toggleChip(this,'regions','Any')" id="region-any-chip">&#127760; No preference</div>
         </div>
-        <div class="checker-warning" id="warn-5"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg> Please select at least one region.</div>
-        <div class="checker-nav"><button class="btn-back" onclick="prevStep(5)">&#x2190; Back</button><button class="btn-next" onclick="nextStep(5)">Next &#x2192;</button></div>
+        <div class="checker-warning" id="warn-6"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg> Please select at least one region.</div>
+        <div class="checker-nav"><button class="btn-back" onclick="prevStep(6)">&#x2190; Back</button><button class="btn-next" onclick="nextStep(6)">Next &#x2192;</button></div>
       </div>
-      <div class="checker-step" id="cstep-6">
+      <div class="checker-step" id="cstep-7">
         <div class="step-q">Do you have a language test score?</div>
         <div class="step-hint">Select your test and score. This affects which universities and scholarships you qualify for.</div>
         <select class="checker-select" id="lang-test-select" onchange="onLangTestChange(this.value)">
@@ -2172,10 +2125,10 @@ html, body {
           <label style="font-size:13px;font-weight:600;color:var(--navy);display:block;margin-bottom:8px">Your score / level</label>
           <select class="checker-select" id="lang-score-select"><option value="">Select score...</option></select>
         </div>
-        <div class="checker-warning" id="warn-6"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg> Please select a language test or &quot;No test taken yet&quot; to continue.</div>
-        <div class="checker-nav"><button class="btn-back" onclick="prevStep(6)">&#x2190; Back</button><button class="btn-next" onclick="nextStep(6)">Next &#x2192;</button></div>
+        <div class="checker-warning" id="warn-7"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg> Please select a language test or &quot;No test taken yet&quot; to continue.</div>
+        <div class="checker-nav"><button class="btn-back" onclick="prevStep(7)">&#x2190; Back</button><button class="btn-next" onclick="nextStep(7)">Next &#x2192;</button></div>
       </div>
-            <div class="checker-step" id="cstep-7">
+            <div class="checker-step" id="cstep-8">
         <!-- ── Shown for UNDERGRADUATE ── -->
         <div id="step7-ug">
           <div class="step-q">Tell us about your academic profile</div>
@@ -2234,17 +2187,17 @@ html, body {
           </div>
         </div>
 
-        <div class="checker-warning" id="warn-7">
+        <div class="checker-warning" id="warn-8">
           <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
           Please answer all three questions to continue.
         </div>
         <div class="checker-nav">
-          <button class="btn-back" onclick="prevStep(7)">&#x2190; Back</button>
-          <button class="btn-next" onclick="nextStep(7)">Next &#x2192;</button>
+          <button class="btn-back" onclick="prevStep(8)">&#x2190; Back</button>
+          <button class="btn-next" onclick="nextStep(8)">Next &#x2192;</button>
         </div>
       </div>
 
-<div class="checker-step" id="cstep-8">
+<div class="checker-step" id="cstep-9">
         <div class="step-q">What&apos;s your funding goal?</div>
         <div class="step-hint">This shapes which scholarships and countries we prioritise in your results.</div>
         <div class="checker-radio-group">
@@ -2252,10 +2205,21 @@ html, body {
           <label class="checker-radio" onclick="selectRadio(this,'funding','partial')"><span class="checker-radio-dot"></span> &#x1F4A1; Partial funding &mdash; I can contribute something</label>
           <label class="checker-radio" onclick="selectRadio(this,'funding','selffund')"><span class="checker-radio-dot"></span> &#x1F4B3; Self-fund &mdash; I&apos;ll pay, I just need affordable options</label>
         </div>
-        <div class="checker-warning" id="warn-8"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg> Please select your funding goal.</div>
-        <div class="checker-nav"><button class="btn-back" onclick="prevStep(8)">&#x2190; Back</button><button class="btn-next" onclick="nextStep(8)">Next &#x2192;</button></div>
+        <div class="checker-warning" id="warn-9"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg> Please select your funding goal.</div>
+        <div class="checker-nav"><button class="btn-back" onclick="prevStep(9)">&#x2190; Back</button><button class="btn-next" onclick="nextStep(9)">Next &#x2192;</button></div>
       </div>
-      <div class="checker-step" id="cstep-9">
+      <div class="checker-step" id="cstep-10">
+        <div class="step-q">What is your risk tolerance?</div>
+        <div class="step-hint">This shapes how we balance safe affordable options vs. competitive high-reward scholarships.</div>
+        <div class="checker-radio-group">
+          <label class="checker-radio" onclick="selectRadio(this,'risk','low')"><span class="checker-radio-dot"></span> &#128737;&#65039; Low — I want safe, reliable options with high acceptance rates</label>
+          <label class="checker-radio" onclick="selectRadio(this,'risk','medium')"><span class="checker-radio-dot"></span> &#9878;&#65039; Medium — I am open to competitive scholarships alongside safer options</label>
+          <label class="checker-radio" onclick="selectRadio(this,'risk','high')"><span class="checker-radio-dot"></span> &#127919; High — I want the most prestigious and fully funded options, even if very competitive</label>
+        </div>
+        <div class="checker-warning" id="warn-10"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg> Please select your risk tolerance.</div>
+        <div class="checker-nav"><button class="btn-back" onclick="prevStep(10)">&#x2190; Back</button><button class="btn-next" onclick="nextStep(10)">Next &#x2192;</button></div>
+      </div>
+      <div class="checker-step" id="cstep-11">
         <div class="step-q">What additional funding options interest you?</div>
         <div class="step-hint">We&apos;ll include these in your results alongside scholarships. Select all that apply.</div>
         <div class="checker-chip-group" id="funding-options-chips">
@@ -2266,12 +2230,12 @@ html, body {
           <div class="checker-chip" onclick="toggleFundingOption(this,'loans')">&#128179; Student Loans (no cosigner)</div>
         </div>
         <div style="font-size:12px;color:var(--dgray);margin-top:-6px;margin-bottom:14px;">Government scholarships and school awards are selected by default.</div>
-        <div class="checker-warning" id="warn-9">
+        <div class="checker-warning" id="warn-11">
           <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
           Please select at least one option to continue.
         </div>
         <div class="checker-nav">
-          <button class="btn-back" onclick="prevStep(9)">&#x2190; Back</button>
+          <button class="btn-back" onclick="prevStep(11)">&#x2190; Back</button>
           <button class="btn-find" onclick="showNameModal()">&#x1F50D; Find My Matches</button>
         </div>
       </div>
@@ -2334,12 +2298,9 @@ html, body {
                   <div style="border-top:1px solid rgba(255,255,255,0.1);margin-top:10px;padding-top:10px;">
                     <!-- CTA row -->
                     <div style="background:rgba(13,148,136,0.15);border-radius:8px;padding:10px 14px;margin-bottom:10px;">
-                      <div>
-                        <div style="font-size:10px;font-weight:700;color:#5eead4;margin-bottom:3px;line-height:1.4;text-align:left;">Check your recommendations for free<br>and enter the Radius monthly study abroad giveaway</div>
-                        <div style="font-size:9px;color:#64748b;text-align:left;">34 countries &middot; 140+ universities &middot; Free</div>
-                        <div style="font-size:11px;font-weight:900;color:white;margin-top:3px;text-align:left;">withradius.com/guide</div>
-                      </div>
-                      
+                      <div style="font-size:10px;font-weight:700;color:#5eead4;margin-bottom:3px;line-height:1.4;text-align:left;">Check your recommendations for free<br>and enter the Radius monthly study abroad giveaway</div>
+                      <div style="font-size:9px;color:#64748b;text-align:left;">34 countries &middot; 140+ universities &middot; Free</div>
+                      <div style="font-size:11px;font-weight:900;color:white;margin-top:3px;text-align:left;">withradius.com/guide</div>
                     </div>
                     <!-- App stores row -->
                     <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
@@ -2394,6 +2355,7 @@ html, body {
               <button class="btn-back-to-results" onclick="toggleBreakdownPanel()">&#x2191; Collapse</button>
             </div>
             <div id="sw-inject"></div>
+            <div id="watchout-inject"></div>
             <div id="actions-inject"></div>
             <div id="matched-countries-section"></div>
             <div id="matched-schs-section"></div>
@@ -2584,14 +2546,14 @@ html, body {
 
   <!-- Score bars -->
   <div style="display:flex;flex-direction:column;gap:10px;padding:16px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:20px;">
-    <div style="display:flex;align-items:center;gap:12px;">
+    <div style="margin-bottom:10px;">
       <span style="font-size:10px;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:.5px;min-width:130px;">Study Readiness</span>
       <div style="flex:1;height:6px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden;">
         <div id="snap-bar-1" style="height:100%;border-radius:3px;background:#059669;width:0%;"></div>
       </div>
       <span id="snap-pct-1" style="font-size:13px;font-weight:800;color:#059669;min-width:36px;text-align:right;">0%</span>
     </div>
-    <div style="display:flex;align-items:center;gap:12px;">
+    <div style="margin-bottom:10px;">
       <span style="font-size:10px;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:.5px;min-width:130px;">Scholarship Odds</span>
       <div style="flex:1;height:6px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden;">
         <div id="snap-bar-2" style="height:100%;border-radius:3px;background:#16a34a;width:0%;"></div>
@@ -2637,7 +2599,9 @@ const GOVT_SCHS = [{"name": "Commonwealth Scholarship", "country": "UK", "level"
 const SCHOOL_SCHS = [{"name": "DSU Lazio Grant", "uni": "Sapienza University of Rome", "country": "Italy", "value": "Up to €8,000/yr", "covers": "Tuition waiver + monthly living allowance", "deadline": "Apr–May (via DSU portal)", "req": "GPA 3.0+ · Income-based", "notes": "Italian regional grant. Apply via DSU Lazio. Income-qualified international students eligible.", "apply": "laziodisco.it", "type": "Need-based"}, {"name": "ESU Padova Grant", "uni": "University of Padua", "country": "Italy", "value": "Full tuition + stipend", "covers": "100% tuition waiver + €3,000+ stipend/yr", "deadline": "Apr (1st call via ESU)", "req": "Merit + income", "notes": "ESU Padova covers tuition fully + monthly stipend for income-qualified non-EU students.", "apply": "esu.pd.it", "type": "Need-based"}, {"name": "DSU Lombardia Grant", "uni": "Univ of Milan / PoliMi", "country": "Italy", "value": "Up to €10,000/yr", "covers": "Tuition waiver + up to €2,500 cash", "deadline": "Mar–Apr (via Reddito DSU)", "req": "Income qualifying", "notes": "Italy's most generous regional grant. Milan universities. Covers tuition + annual cash grant.", "apply": "diritto.studenti.it", "type": "Need-based"}, {"name": "Lund Global Scholarship", "uni": "Lund University", "country": "Sweden", "value": "Full tuition (up to SEK260,000/yr)", "covers": "100% tuition waiver", "deadline": "Jan 16", "req": "GPA + Language required (verify with Lund)", "notes": "Competitive academic merit scholarship. For countries outside EU/EEA.", "apply": "lu.se", "type": "Merit-based"}, {"name": "Uppsala University Scholarship", "uni": "Uppsala University", "country": "Sweden", "value": "Full tuition waiver", "covers": "100% tuition waiver for 1 year (renewable)", "deadline": "Jan 15", "req": "GPA 3.5+", "notes": "For students from low/middle income countries. Academic merit.", "apply": "uu.se", "type": "Merit-based"}, {"name": "APU Scholarship", "uni": "Ritsumeikan APU", "country": "Japan", "value": "Up to 100% tuition", "covers": "Full or partial tuition waiver", "deadline": "Nov (Apr entry) / May (Sep entry)", "req": "Language required (verify with APU)", "notes": "APU offers tiered scholarships 30–100% of tuition based on merit. One of Japan's most accessible scholarship programs for African students.", "apply": "apu.ac.jp", "type": "Merit-based"}, {"name": "TUM Merit Scholarship", "uni": "TU Munich", "country": "Germany", "value": "€1,800–€3,600/yr", "covers": "€150–€300/month cash grant", "deadline": "Jun–Jul", "req": "Strong academic record (top 5%)", "notes": "Highly competitive. Based on academic excellence. Supplement to free tuition.", "apply": "tum.de", "type": "Merit-based"}, {"name": "Deutschlandstipendium", "uni": "All German public universities", "country": "Germany", "value": "€3,600/yr", "covers": "€300/month (12 months)", "deadline": "Varies by university (typically May–Sep)", "req": "Strong academic record", "notes": "Half funded by university, half by private sponsor. Open to international students at any German public university.", "apply": "deutschlandstipendium.de", "type": "Merit/private"}, {"name": "UCD Global Scholarship", "uni": "Univ College Dublin", "country": "Ireland", "value": "€3,000/yr off tuition", "covers": "Partial tuition reduction", "deadline": "Mar–Apr (apply with admission)", "req": "Academic merit · NGN/GHA/KEN often exempt", "notes": "For high-achieving international students. Applied automatically after admission in some cases.", "apply": "ucd.ie", "type": "Merit-based"}, {"name": "Government of Ireland Fellowship", "uni": "TU Dublin & others", "country": "Ireland", "value": "€10,000/yr", "covers": "Tuition up to €10,000/yr", "deadline": "Oct–Nov (via HEA)", "req": "Academic merit · NGN/GHA/KEN often exempt", "notes": "60 fully-funded places globally. Competitive but very valuable.", "apply": "hea.ie", "type": "Merit-based"}, {"name": "Hull International Scholarship", "uni": "University of Hull", "country": "UK", "value": "£2,000–£4,000/yr off", "covers": "Partial tuition reduction", "deadline": "Rolling (on admission)", "req": "Good academic record · NGN/GHA/KEN often exempt", "notes": "Automatic consideration on application. For students from developing countries.", "apply": "hull.ac.uk", "type": "Merit-based"}, {"name": "Korea University Scholarship", "uni": "Korea University", "country": "South Korea", "value": "$1,000–$5,000/yr", "covers": "Partial tuition or living allowance", "deadline": "Jan (Sep entry) / Jul (Mar entry)", "req": "GPA 3.3+ · Language required (verify with uni)", "notes": "Institutional scholarship. Separate from GKS. Apply with admissions.", "apply": "korea.ac.kr", "type": "Merit-based"}, {"name": "NTU-T Scholarship (Taiwan)", "uni": "National Taiwan University", "country": "Taiwan", "value": "Full tuition + NTD8,000/mo", "covers": "Tuition + monthly living allowance", "deadline": "Mar (Sep entry)", "req": "Language required (verify with NTU)", "notes": "University-level scholarship. Less funding than ICDF but easier to get.", "apply": "ntu.edu.tw", "type": "Merit-based"}, {"name": "MUN Merit Scholarship", "uni": "Memorial University NL", "country": "Canada", "value": "CAD$3,000–$6,000/yr", "covers": "Partial tuition reduction", "deadline": "Feb (Sep entry)", "req": "Language required · MOI may be accepted", "notes": "Automatic consideration for high-achieving international applicants.", "apply": "mun.ca", "type": "Merit-based"}, {"name": "University of Manitoba Intl Graduate Award", "uni": "Univ of Manitoba", "country": "Canada", "value": "CAD$18,000/yr", "covers": "Partial or full tuition + living", "deadline": "Feb–Apr", "req": "GPA 3.7+", "notes": "Available for Master's and PhD students. Covers tuition and living.", "apply": "umanitoba.ca", "type": "Merit-based"}, {"name": "Massey University Scholarship", "uni": "Massey University", "country": "New Zealand", "value": "NZD$8,000–$10,000/yr", "covers": "Partial tuition reduction", "deadline": "Oct (Feb entry) / Apr (Jul entry)", "req": "Language required (verify with Massey)", "notes": "For students from developing countries. Applied at time of admission.", "apply": "massey.ac.nz", "type": "Merit-based"}, {"name": "UM Chancellor Award", "uni": "Universiti Malaya", "country": "Malaysia", "value": "Full tuition", "covers": "100% tuition waiver", "deadline": "May–Jun (for Sep entry)", "req": "GPA 3.5+ · NGN/GHA/KEN generally exempt", "notes": "Competitive. For exceptional international postgraduate students.", "apply": "um.edu.my", "type": "Merit-based"}, {"name": "Erasmus+ scholarships (EU exchanges)", "uni": "Various EU universities", "country": "EU-wide", "value": "€700–€1,000/month", "covers": "Monthly stipend during exchange semester", "deadline": "Varies by institution", "req": "Enrolled in home university", "notes": "If enrolled at a home university with an Erasmus+ partner agreement, students can receive Erasmus+ funding for exchange semesters.", "apply": "erasmus.eu", "type": "Exchange/mobility"}];
 const MULTILATERAL = [{"name": "World Bank Scholarships Program (JJ/WBGSP)", "org": "World Bank Group", "destination": "USA/Global", "value": "Full: tuition+$30,000/yr stipend", "covers": "Tuition+living+health insurance+travel", "deadline": "Varies (Jan–Mar typical)", "level": "Master's", "notes": "For citizens of World Bank member countries in Sub-Saharan Africa. Must work in development sector.", "apply": "worldbank.org/scholarships", "eligible": "✅ All"}, {"name": "AfDB African Development Bank Graduate Fellowship", "org": "African Development Bank", "destination": "USA / Global", "value": "Full funding", "covers": "Tuition+living stipend+travel", "deadline": "Mar–Apr", "level": "Master's", "notes": "For African citizens studying development-related fields. Strong focus on economics, engineering, agriculture.", "apply": "afdb.org", "eligible": "✅ All"}, {"name": "African Union Kwame Nkrumah Scientific Award", "org": "African Union", "destination": "Africa/Global", "value": "Varies", "covers": "Research grant + recognition", "deadline": "Annual (varies)", "level": "PhD / Research", "notes": "For African scholars in sciences and engineering. Promotes African-led research.", "apply": "au.int", "eligible": "✅ All"}, {"name": "OFID Scholarship Award", "org": "OPEC Fund for Intl Development", "destination": "Austria (Vienna)", "value": "$10,000–$15,000/yr", "covers": "Partial funding for development-related studies", "deadline": "Apr 30", "level": "Master's", "notes": "For citizens of OPEC Fund member countries incl Nigeria, Ghana, Kenya. Focus: development studies.", "apply": "ofid.org/scholarship", "eligible": "✅ All"}, {"name": "Islamic Development Bank (IsDB) Scholarship", "org": "Islamic Development Bank", "destination": "Various", "value": "Full: tuition+living+travel", "covers": "Full scholarship for IDB member countries", "deadline": "Varies (check IsDB)", "level": "UG/Master's/PhD", "notes": "For Muslim-majority countries. Nigeria, Ghana, Kenya all eligible for IDB scholarship programs.", "apply": "isdb.org", "eligible": "✅ (Muslim students)"}, {"name": "Erasmus+ International Credit Mobility", "org": "European Commission", "destination": "EU countries", "value": "€700–€1,000/month", "covers": "Travel + living during exchange", "deadline": "Varies (via home institution)", "level": "UG/Master's/PhD", "notes": "Exchange program. Must be enrolled at an institution with Erasmus+ partner agreements with EU universities.", "apply": "erasmus.eu", "eligible": "✅ All (via home univ)"}, {"name": "KOICA Scholarship Program", "org": "Korea Intl Cooperation Agency", "destination": "South Korea", "value": "Full: $10,000–$15,000/yr", "covers": "Tuition+KRW700K/mo+flights+settling", "deadline": "Feb–Mar", "level": "Master's", "notes": "South Korean government development cooperation scholarship. Nigeria, Ghana, Kenya all eligible.", "apply": "koica.go.kr", "eligible": "✅ All"}, {"name": "JICA FRIENDSHIP Scholarship", "org": "Japan Intl Cooperation Agency", "destination": "Japan", "value": "Full: ¥117,000/mo+tuition", "covers": "Tuition+monthly stipend+travel", "deadline": "Varies (check JICA office)", "level": "Master's & PhD", "notes": "JICA-sponsored scholarship for students from developing countries. Applied via JICA offices in Lagos/Accra/Nairobi.", "apply": "jica.go.jp", "eligible": "✅ All"}, {"name": "Taiwan ICDF Technical Mission", "org": "Taiwan ICDF", "destination": "Taiwan", "value": "Full: NTD25,000/mo+tuition+housing", "covers": "Tuition+monthly allowance+accommodation+return flight", "deadline": "Dec–Jan", "level": "UG/Master's/PhD", "notes": "One of the most generous multilateral scholarships. Very competitive. Open to developing country nationals.", "apply": "icdf.org.tw", "eligible": "✅ All"}, {"name": "Belgium Development Cooperation (VLIR-UOS)", "org": "VLIR-UOS Belgium", "destination": "Belgium", "value": "€18,000–€25,000/yr", "covers": "Full: tuition+monthly stipend+travel", "deadline": "Jan–Feb", "level": "Master's & PhD", "notes": "Belgian development cooperation. Nigeria, Ghana, Kenya eligible. Focus on development-related disciplines.", "apply": "vliruos.be", "eligible": "✅ All"}, {"name": "French Embassy Excellence Scholarship", "org": "French Embassy", "destination": "France", "value": "€800–€1,200/month", "covers": "Monthly stipend + partial tuition support", "deadline": "Jan–Mar (check Embassy)", "level": "Master's & PhD", "notes": "Bilateral. Apply via French Embassy in Lagos/Accra/Nairobi. Supplements CampusFrance application.", "apply": "institutfrancais-nigeria.com", "eligible": "✅ All"}, {"name": "Japanese Embassy Cultural Exchange", "org": "Japanese Embassy", "destination": "Japan", "value": "¥117,000/month + tuition", "covers": "Tuition + living allowance + flights", "deadline": "May–Jun (Embassy route)", "level": "UG/Master's/PhD", "notes": "Embassy Recommended MEXT track. Apply directly to Japanese Embassy. One of the best pathways for African students to Japan.", "apply": "studyinjapan.go.jp", "eligible": "✅ All"}, {"name": "Canadian Commonwealth Fellowship", "org": "Global Affairs Canada", "destination": "Canada", "value": "CAD$15,000–$25,000/yr", "covers": "Tuition + living support + travel", "deadline": "Dec–Jan", "level": "Master's & PhD", "notes": "For Commonwealth developing country nationals pursuing graduate studies in Canada.", "apply": "commonwealthofnations.org", "eligible": "✅ All"}];
 const GRANTS = [{"name": "Prodigy Finance Scholarship", "funder": "Prodigy Finance", "region": "USA/UK/Global", "amount": "$5,000–$10,000 per award", "focus": "General / Business / STEM", "deadline": "Annual (check Prodigy website)", "level": "Master's & MBA", "notes": "For students enrolled at Prodigy-supported universities. Separate from loan. Merit-based.", "apply": "prodigyfinance.com/scholarship"}, {"name": "Orange Tulip Scholarship", "funder": "Nuffic Neso", "region": "Netherlands", "amount": "€2,500–$5,000 off tuition", "focus": "All fields", "deadline": "Jan–Mar", "level": "Bachelor's & Master's", "notes": "For students from select countries including Nigeria and Ghana applying to Dutch universities.", "apply": "nesoorangegrant.com"}, {"name": "GREAT Scholarship (UK)", "funder": "British Council", "region": "UK", "amount": "£10,000 off tuition", "focus": "All fields", "deadline": "Mar–Apr", "level": "Master's", "notes": "For students from eligible countries including Nigeria, Ghana, Kenya. Applied at time of admission.", "apply": "study-uk.britishcouncil.org"}, {"name": "AAUW International Fellowship", "funder": "American Assoc of Univ Women", "region": "USA", "amount": "$18,000–$30,000/yr", "focus": "All fields (women only)", "deadline": "Nov 15", "level": "Master's/PhD/Postdoc", "notes": "For women who are not US citizens or permanent residents. Strong emphasis on women's rights and leadership.", "apply": "aauw.org/fellowships"}, {"name": "MasterCard Foundation Scholars Program", "funder": "MasterCard Foundation", "region": "USA/Africa/Canada", "amount": "Full funding ($30,000–$60,000/yr)", "focus": "All fields", "deadline": "Nov–Jan (varies by partner univ)", "level": "UG/Master's", "notes": "For academically talented but financially disadvantaged Africans. Partner universities include Cornell, U of Toronto, McGill, African universities.", "apply": "mastercardfdn.org/scholars"}, {"name": "Bill & Melinda Gates Foundation Scholarship", "funder": "Gates Cambridge / Gates Foundation", "region": "UK/Global", "amount": "Full funding ($45,000+/yr)", "focus": "STEM, Development, Health", "deadline": "Oct (Gates Cambridge)", "level": "PhD primarily", "notes": "Gates Cambridge for Cambridge University PhD. Very competitive. Gates Foundation grants for health/development research.", "apply": "gatescambridge.org"}, {"name": "Ford Foundation International Fellowship", "funder": "Ford Foundation", "region": "USA", "amount": "Full: tuition+living+travel", "focus": "Social justice / Humanities / Social Sciences", "deadline": "Varies (via regional partners)", "level": "Master's & PhD", "notes": "For individuals committed to social change. African regional programs for Nigeria, Ghana, Kenya.", "apply": "fordfoundation.org"}, {"name": "Calouste Gulbenkian Foundation Grant", "funder": "Gulbenkian Foundation", "region": "Portugal", "amount": "€1,000–$10,000 varies", "focus": "Arts, Sciences, Education, Social Sciences", "deadline": "Varies", "level": "All levels", "notes": "Foundation grants for Portugal-based study and Portuguese-connection programs. Open to African students.", "apply": "gulbenkian.pt"}, {"name": "Oppenheimer Memorial Trust", "funder": "Oppenheimer Memorial Trust", "region": "South Africa/UK", "amount": "$5,000–$15,000/yr", "focus": "All fields", "deadline": "Jun–Jul", "level": "Master's & PhD", "notes": "For South African students and increasingly sub-Saharan African students studying postgraduate at approved institutions.", "apply": "omtrust.org.za"}, {"name": "AFGRAD African Graduate Fellowship", "funder": "African-American Inst", "region": "USA", "amount": "$10,000–$20,000/yr", "focus": "Development-related fields", "deadline": "Varies", "level": "Master's", "notes": "USAID-funded fellowship for African students in development-related graduate programs at US universities.", "apply": "aaiusa.org"}, {"name": "DAAD In-Country/In-Region Scholarship", "funder": "DAAD Germany", "region": "Africa (regional)", "amount": "€850/month stipend", "focus": "All fields", "deadline": "Jun–Sep (varies)", "level": "Master's & PhD", "notes": "For African students studying at African universities or exchange programs within Africa. Also funds research stays in Germany.", "apply": "daad.de"}, {"name": "Jim Ovia Foundation Scholarship", "funder": "Jim Ovia Foundation", "region": "Nigeria", "amount": "Full tuition + living at Nigerian universities", "focus": "Tech, Business, STEM", "deadline": "Mar–Apr", "level": "UG", "notes": "For Nigerian students only at Nigerian institutions. Tech and business focused.", "apply": "jimovia.com/scholarship"}, {"name": "Kwame Nkrumah University of Science Scholarship", "funder": "KNUST", "region": "Ghana", "amount": "Partial tuition waiver", "focus": "STEM, Agriculture, Medicine", "deadline": "Jun–Jul (with admission)", "level": "UG/Master's", "notes": "For international students at Ghana's leading STEM university. Competitive merit-based.", "apply": "knust.edu.gh"}, {"name": "Kenya Education Fund", "funder": "Kenya Education Fund", "region": "Kenya/USA", "amount": "$1,000–$5,000/yr", "focus": "All fields", "deadline": "Mar–Apr", "level": "UG", "notes": "For underprivileged Kenyan students. Partial grants for study within Kenya and abroad.", "apply": "kenyaeducationfund.org"}];
-const LOANS = [{"lender": "Prodigy Finance", "countries": "USA, UK, Canada, Australia, Germany, France, UAE + 15 more countries (1,800+ schools)", "amount": "Up to $220,000", "rate": "8.34%+ variable (SOFR + margin)", "repay": "7–20 yrs; 6-mo grace period after graduation; interest-only in school optional", "cosigner": "No cosigner", "collateral": "No collateral", "levels": "Master's & MBA only (postgraduate)", "link": "prodigyfinance.com", "ngn": "✅", "gha": "✅", "ken": "✅", "notes": "Postgraduate Master's and MBA only. No cosigner required. Covers up to 100% cost of attendance (tuition + living) depending on university. 120+ eligible nationalities. Check school list at prodigyfinance.com/schools."}, {"lender": "Passage (formerly Navient)", "countries": "USA (select schools)", "amount": "Varies ($5,000–$50,000)", "rate": "Variable rate", "repay": "Varies", "cosigner": "May require cosigner", "collateral": "No collateral", "levels": "UG & Master's", "link": "passagestudentloans.com", "ngn": "Check eligibility", "gha": "Check eligibility", "ken": "Check eligibility", "notes": "Passage focuses on international students at US schools. Less widely used than MPOWER. Check current eligibility at their website."}, {"lender": "Lendwise", "countries": "UK (select universities)", "amount": "£5,000–£40,000", "rate": "5.9%–12% variable", "repay": "Up to 10 yrs; repayment starts 3 months after study", "cosigner": "No cosigner for eligible profiles", "collateral": "No collateral", "levels": "Master's & MBA (UK only)", "link": "lendwise.com", "ngn": "✅", "gha": "✅", "ken": "✅", "notes": "UK-focused lender. Covers tuition at eligible UK universities. No cosigner for many applicants. Nigerian, Ghanaian, Kenyan students eligible. Faster approval than banks."}, {"lender": "Future Finance", "countries": "UK", "amount": "£2,500–£40,000", "rate": "5.9%–22.9% variable", "repay": "5–10 yrs; flexible repayment", "cosigner": "No cosigner required", "collateral": "No collateral", "levels": "UG & Master's (UK only)", "link": "futurefinance.com", "ngn": "✅", "gha": "✅", "ken": "✅", "notes": "UK-based lender for students at UK universities. No cosigner required. Covers tuition and living costs. Check current eligibility."}, {"lender": "HDFC Credila (India origin)", "countries": "USA, UK, Canada, Australia + global", "amount": "Up to $100,000", "rate": "9.5%–12% (INR or foreign currency)", "repay": "Up to 15 yrs", "cosigner": "Usually requires cosigner in India", "collateral": "No collateral for some programs", "levels": "UG & Master's", "link": "hdfccredila.com", "ngn": "❌ (India only origin)", "gha": "❌", "ken": "❌", "notes": "Primarily for Indian students. Not accessible to Nigerian/Ghanaian/Kenyan nationals unless holding Indian residency."}, {"lender": "Stilt (fintech)", "countries": "USA", "amount": "$1,000–$35,000", "rate": "7.99%–25% fixed", "repay": "12–36 months", "cosigner": "No cosigner", "collateral": "No collateral", "levels": "Any level (US enrolled)", "link": "stilt.com", "ngn": "✅", "gha": "✅", "ken": "✅", "notes": "US-based fintech. No cosigner. For students already in the USA on F-1, OPT, or J-1 visa. Good for emergency funding."}, {"lender": "Earnest / College Ave (cosigner)", "countries": "USA", "amount": "$1,000–$200,000", "rate": "3.45%–16.24% variable", "repay": "5–15 yrs", "cosigner": "US citizen/PR cosigner required", "collateral": "No collateral", "levels": "UG & Master's", "link": "earnest.com / collegeavelending.com", "ngn": "⚠️ Cosigner needed", "gha": "⚠️ Cosigner needed", "ken": "⚠️ Cosigner needed", "notes": "Requires a US citizen or permanent resident cosigner. Lower rates if you have a cosigner in the US. Not accessible for most first-time international students."}, {"lender": "MoneyMatch (Malaysia-based)", "countries": "Malaysia", "amount": "RM5,000–RM50,000", "rate": "4%–8% variable", "repay": "Up to 7 yrs", "cosigner": "May require guarantor", "collateral": "No collateral", "levels": "UG & Master's (Malaysia only)", "link": "moneymatch.my", "ngn": "✅ (studying Malaysia)", "gha": "✅ (studying Malaysia)", "ken": "✅ (studying Malaysia)", "notes": "Malaysia-based loan for students enrolled at Malaysian universities. Accessible to Nigerian/Ghanaian/Kenyan students studying in Malaysia."}, {"lender": "Kenyan banks (e.g. Equity Bank, KCB)", "countries": "Global (disbursement in KES)", "amount": "KES 100,000–2,000,000", "rate": "13%–18% (KES)", "repay": "Up to 5 yrs", "cosigner": "Typically requires guarantor", "collateral": "Asset/guarantor", "levels": "UG & Master's", "link": "equitybankgroup.com / kcbgroup.com", "ngn": "N/A", "gha": "N/A", "ken": "✅ KEN only", "notes": "Kenyan commercial banks offer education loans for Kenyan nationals studying abroad. Equity Bank and KCB have education loan products. Currency is KES — FX risk when paying foreign tuition."}, {"lender": "Nigerian banks (e.g. GTBank, Zenith, UBA)", "countries": "Global (disbursement in NGN/USD)", "amount": "₦500K–₦5M (~$600–$6K)", "rate": "20%–28% (NGN) or 8%–12% (USD loans)", "repay": "Up to 5 yrs", "cosigner": "Typically guarantor/collateral", "collateral": "Yes for larger amounts", "levels": "UG & Master's", "link": "gtbank.com / zenithbank.com / ubagroup.com", "ngn": "✅ NGN only", "gha": "N/A", "ken": "N/A", "notes": "Nigerian commercial banks offer education loans but interest rates are high in NGN. USD-denominated education loans from some banks are more attractive. Note: Radius (withradius.com) helps with tuition payment processing."}, {"lender": "Ghanaian banks (e.g. Ecobank, Stanbic)", "countries": "Global (disbursement in GHS)", "amount": "GHS 5,000–50,000", "rate": "20%–28% (GHS)", "repay": "Up to 5 yrs", "cosigner": "Guarantor required", "collateral": "Yes for larger amounts", "levels": "UG & Master's", "link": "ecobank.com / stanbicghana.com", "ngn": "N/A", "gha": "✅ GHA only", "ken": "N/A", "notes": "Ghana commercial banks offer education loan products. FX risk when paying in foreign currency. Interest rates high in GHS."}, {"lender": "  💡 RADIUS TIP: Radius (withradius.com) specialises in helping Nigerian, Ghanaian & Kenyan students pay international tuition seamlessly — avoiding FX delays that cost admission offers. Use Radius + a loan from MPOWER/Prodigy to fully fund your international education.", "countries": "", "amount": "", "rate": "", "repay": "", "cosigner": "", "collateral": "", "levels": "", "link": "", "ngn": "", "gha": "", "ken": "", "notes": ""}];
+const LOANS = [
+{"lender": "Passage (formerly Navient)", "countries": "USA & Canada (select schools)", "amount": "Varies ($5,000–$50,000)", "rate": "Variable rate", "repay": "Varies", "cosigner": "May require cosigner", "collateral": "No collateral", "levels": "UG & Master's", "link": "passagestudentloans.com", "ngn": "✅", "gha": "✅", "ken": "✅", "notes": "Supports Nigerian, Ghanaian and Kenyan students at US and Canadian schools. Favours STEM, MBA and Business students."},
+{"lender": "MPOWER Financing", "countries": "USA & Canada (400+ schools)", "amount": "Up to $100,000", "rate": "12.99%–14.98% fixed", "repay": "Up to 10 yrs; 6-mo grace after graduation", "cosigner": "No cosigner", "collateral": "No collateral", "levels": "UG & Master's", "link": "https://app.mpowerfinancing.com/?utm_medium=link&utm_campaign=partnerlink&utm_source=pay4me&utm_content=20220720-eligibility", "ngn": "✅", "gha": "✅", "ken": "✅", "notes": "No cosigner required. Favours STEM, MBA and Business students. Available at 400+ schools in USA and Canada. Nigerian, Ghanaian and Kenyan students eligible."},{"lender": "Prodigy Finance", "countries": "USA, UK, Canada, Australia, Germany, France, UAE + 15 more countries (1,800+ schools)", "amount": "Up to $220,000", "rate": "8.34%+ variable (SOFR + margin)", "repay": "7–20 yrs; 6-mo grace period after graduation; interest-only in school optional", "cosigner": "No cosigner", "collateral": "No collateral", "levels": "Master's & MBA only (postgraduate)", "link": "prodigyfinance.com", "ngn": "✅", "gha": "✅", "ken": "✅", "notes": "Postgraduate Master's and MBA only. No cosigner required. Covers up to 100% cost of attendance (tuition + living) depending on university. 120+ eligible nationalities. Check school list at prodigyfinance.com/schools."},  {"lender": "Lendwise", "countries": "UK (select universities)", "amount": "£5,000–£40,000", "rate": "5.9%–12% variable", "repay": "Up to 10 yrs; repayment starts 3 months after study", "cosigner": "No cosigner for eligible profiles", "collateral": "No collateral", "levels": "Master's & MBA (UK only)", "link": "lendwise.com", "ngn": "✅", "gha": "✅", "ken": "✅", "notes": "UK-focused lender. Covers tuition at eligible UK universities. No cosigner for many applicants. Nigerian, Ghanaian, Kenyan students eligible. Faster approval than banks."}, {"lender": "Future Finance", "countries": "UK", "amount": "£2,500–£40,000", "rate": "5.9%–22.9% variable", "repay": "5–10 yrs; flexible repayment", "cosigner": "No cosigner required", "collateral": "No collateral", "levels": "UG & Master's (UK only)", "link": "futurefinance.com", "ngn": "✅", "gha": "✅", "ken": "✅", "notes": "UK-based lender for students at UK universities. No cosigner required. Covers tuition and living costs. Check current eligibility."}, {"lender": "HDFC Credila (India origin)", "countries": "USA, UK, Canada, Australia + global", "amount": "Up to $100,000", "rate": "9.5%–12% (INR or foreign currency)", "repay": "Up to 15 yrs", "cosigner": "Usually requires cosigner in India", "collateral": "No collateral for some programs", "levels": "UG & Master's", "link": "hdfccredila.com", "ngn": "❌ (India only origin)", "gha": "❌", "ken": "❌", "notes": "Primarily for Indian students. Not accessible to Nigerian/Ghanaian/Kenyan nationals unless holding Indian residency."}, {"lender": "Stilt (fintech)", "countries": "USA", "amount": "$1,000–$35,000", "rate": "7.99%–25% fixed", "repay": "12–36 months", "cosigner": "No cosigner", "collateral": "No collateral", "levels": "Any level (US enrolled)", "link": "stilt.com", "ngn": "✅", "gha": "✅", "ken": "✅", "notes": "US-based fintech. No cosigner. For students already in the USA on F-1, OPT, or J-1 visa. Good for emergency funding."}, {"lender": "Earnest / College Ave (cosigner)", "countries": "USA", "amount": "$1,000–$200,000", "rate": "3.45%–16.24% variable", "repay": "5–15 yrs", "cosigner": "US citizen/PR cosigner required", "collateral": "No collateral", "levels": "UG & Master's", "link": "earnest.com / collegeavelending.com", "ngn": "⚠️ Cosigner needed", "gha": "⚠️ Cosigner needed", "ken": "⚠️ Cosigner needed", "notes": "Requires a US citizen or permanent resident cosigner. Lower rates if you have a cosigner in the US. Not accessible for most first-time international students."}, {"lender": "MoneyMatch (Malaysia-based)", "countries": "Malaysia", "amount": "RM5,000–RM50,000", "rate": "4%–8% variable", "repay": "Up to 7 yrs", "cosigner": "May require guarantor", "collateral": "No collateral", "levels": "UG & Master's (Malaysia only)", "link": "moneymatch.my", "ngn": "✅ (studying Malaysia)", "gha": "✅ (studying Malaysia)", "ken": "✅ (studying Malaysia)", "notes": "Malaysia-based loan for students enrolled at Malaysian universities. Accessible to Nigerian/Ghanaian/Kenyan students studying in Malaysia."}, {"lender": "Kenyan banks (e.g. Equity Bank, KCB)", "countries": "Global (disbursement in KES)", "amount": "KES 100,000–2,000,000", "rate": "13%–18% (KES)", "repay": "Up to 5 yrs", "cosigner": "Typically requires guarantor", "collateral": "Asset/guarantor", "levels": "UG & Master's", "link": "equitybankgroup.com / kcbgroup.com", "ngn": "N/A", "gha": "N/A", "ken": "✅ KEN only", "notes": "Kenyan commercial banks offer education loans for Kenyan nationals studying abroad. Equity Bank and KCB have education loan products. Currency is KES — FX risk when paying foreign tuition."}, {"lender": "Nigerian banks (e.g. GTBank, Zenith, UBA)", "countries": "Global (disbursement in NGN/USD)", "amount": "₦500K–₦5M (~$600–$6K)", "rate": "20%–28% (NGN) or 8%–12% (USD loans)", "repay": "Up to 5 yrs", "cosigner": "Typically guarantor/collateral", "collateral": "Yes for larger amounts", "levels": "UG & Master's", "link": "gtbank.com / zenithbank.com / ubagroup.com", "ngn": "✅ NGN only", "gha": "N/A", "ken": "N/A", "notes": "Nigerian commercial banks offer education loans but interest rates are high in NGN. USD-denominated education loans from some banks are more attractive. Note: Radius (withradius.com) helps with tuition payment processing."}, {"lender": "Ghanaian banks (e.g. Ecobank, Stanbic)", "countries": "Global (disbursement in GHS)", "amount": "GHS 5,000–50,000", "rate": "20%–28% (GHS)", "repay": "Up to 5 yrs", "cosigner": "Guarantor required", "collateral": "Yes for larger amounts", "levels": "UG & Master's", "link": "ecobank.com / stanbicghana.com", "ngn": "N/A", "gha": "✅ GHA only", "ken": "N/A", "notes": "Ghana commercial banks offer education loan products. FX risk when paying in foreign currency. Interest rates high in GHS."}];
 const DEADLINES = [{"country": "Norway", "intake": "Aug (Fall)", "opens": "Sep–Oct prev yr", "scholarship_dl": "Oct–Dec (Norwegian Quota Scholarship)", "admission_dl": "Dec 1 (most Master's programs)", "visa_dl": "May–Jun", "notes": "Tuition free — apply early for SiO student housing (very competitive in Oslo)."}, {"country": "France", "intake": "Sep", "opens": "Sep–Oct prev yr", "scholarship_dl": "Jan 10 (Eiffel Excellence)", "admission_dl": "Mar 31 (via CampusFrance)", "visa_dl": "Jun–Jul", "notes": "CampusFrance registration must be done BEFORE applying to university. Eiffel deadline Jan 10 — much earlier."}, {"country": "Italy", "intake": "Sep & Feb", "opens": "Jan (Sep) / Sep (Feb)", "scholarship_dl": "Mar–Apr (ER.GO, DSU, ESU)", "admission_dl": "Apr–Jun (Sep) / Nov (Feb)", "visa_dl": "Jul (Sep) / Jan (Feb)", "notes": "Apply via Universitaly.it. DSU/regional grant applications open separately in March."}, {"country": "Spain", "intake": "Sep", "opens": "Jan–Feb", "scholarship_dl": "Mar–Apr (AECID for Africa)", "admission_dl": "Jun–Aug (rolling, no strict deadline)", "visa_dl": "Jul–Aug", "notes": "AECID Africa scholarship has early deadlines. Spanish university admissions relatively open/rolling."}, {"country": "Portugal", "intake": "Sep & Feb", "opens": "Feb (Sep) / Aug (Feb)", "scholarship_dl": "Mar (FCT PhD scholarships)", "admission_dl": "Jun–Jul (Sep) / Nov (Feb)", "visa_dl": "Jul (Sep) / Dec (Feb)", "notes": "FCT scholarships open Feb–Mar for PhD. Apply directly to university for other programs."}, {"country": "Austria", "intake": "Oct & Mar", "opens": "Oct–Nov prev yr", "scholarship_dl": "Jan–Mar (OeAD Ernst Mach Grant)", "admission_dl": "Sep 1 (Oct) / Feb 1 (Mar)", "visa_dl": "Aug (Oct)", "notes": "OeAD scholarships close Jan–Mar. Register via OeAD portal first."}, {"country": "Czech Republic", "intake": "Sep", "opens": "Nov–Dec prev yr", "scholarship_dl": "Feb (Czech Govt DZS Scholarship)", "admission_dl": "Feb 28–Apr 30 (most programs)", "visa_dl": "Jun–Jul", "notes": "DZS scholarship deadline Feb–Mar. English programs apply directly. Medicine programs very popular — apply by Jan."}, {"country": "Poland", "intake": "Oct", "opens": "Feb–Mar", "scholarship_dl": "Apr–May (NAWA Łukasiewicz)", "admission_dl": "May–Jul (most programs)", "visa_dl": "Aug–Sep", "notes": "NAWA due April–May. Many programs accept applications until July. Affordable and accessible."}, {"country": "Estonia", "intake": "Sep", "opens": "Nov–Dec prev yr", "scholarship_dl": "Feb–Mar (Study in Estonia)", "admission_dl": "Apr 1–Jun 1", "visa_dl": "Jul", "notes": "Study in Estonia scholarship due Feb–Apr. Apply via university portal."}, {"country": "Slovenia", "intake": "Oct", "opens": "Mar–Apr", "scholarship_dl": "Apr–May (CMEPIUS)", "admission_dl": "Jun–Jul", "visa_dl": "Aug", "notes": "CMEPIUS scholarships via cmepius.si. University applications Jun–Jul."}, {"country": "Hungary", "intake": "Sep", "opens": "Sep–Oct prev yr", "scholarship_dl": "Jan 15 (Stipendium Hungaricum — firm deadline)", "admission_dl": "Jun 30 (most universities)", "visa_dl": "Aug", "notes": "Stipendium Hungaricum Jan 15 is a firm deadline — apply via Tempus Foundation partner in Nigeria/Ghana/Kenya first."}, {"country": "Sweden", "intake": "Sep", "opens": "Oct prev yr", "scholarship_dl": "Feb 10 (SISS — firm deadline)", "admission_dl": "Jan 15–16 (admission + SISS application same time)", "visa_dl": "Jun–Jul", "notes": "SISS and admission application submit simultaneously. Both due mid-January. Very competitive."}, {"country": "Ireland", "intake": "Sep", "opens": "Sep–Oct prev yr", "scholarship_dl": "Oct–Nov (Govt of Ireland Scholarship)", "admission_dl": "Feb 1 (CAO UG) / Jun (direct PG)", "visa_dl": "Within 8 wks of offer", "notes": "Govt of Ireland Scholarship due Oct–Nov — 60 places globally. CAO for undergraduate."}, {"country": "Malta", "intake": "Oct & Feb", "opens": "Apr (Oct) / Aug (Feb)", "scholarship_dl": "Apr–May (Endeavour Scholarship)", "admission_dl": "Jun 30 (Oct) / Nov (Feb)", "visa_dl": "Aug (Oct)", "notes": "Endeavour Scholarship deadline Apr–May via scholarships.gov.mt."}, {"country": "UK", "intake": "Sep & Jan", "opens": "Sep–Oct prev yr", "scholarship_dl": "Nov 2 (Chevening); Nov–Dec (Commonwealth)", "admission_dl": "UCAS Jun 30 (main) / Jan 31 (Oxbridge/medicine)", "visa_dl": "Within 3 months of offer", "notes": "Chevening requires 2+ yrs work experience. GREAT Scholarship Mar–Apr."}, {"country": "Malaysia", "intake": "Sep & Mar", "opens": "Nov–Dec (Sep) / May (Mar)", "scholarship_dl": "May–Jun (MIS Scholarship)", "admission_dl": "Apr–Jun (Sep) / Oct–Nov (Mar)", "visa_dl": "Jun (Sep) / Dec (Mar)", "notes": "MIS scholarship at biasiswa.mohe.gov.my. Apply scholarship before admission where possible."}, {"country": "Philippines", "intake": "Jun & Nov", "opens": "Feb (Jun) / Jun (Nov)", "scholarship_dl": "Jan–Feb (DOST)", "admission_dl": "Feb–Mar (Jun) / Jun (Nov)", "visa_dl": "Apr (Jun) / Aug (Nov)", "notes": "Very affordable, rolling admissions at most universities."}, {"country": "India", "intake": "Jul", "opens": "Jan–Feb", "scholarship_dl": "Apr–May (ICCR — firm)", "admission_dl": "Mar–Apr", "visa_dl": "May–Jun", "notes": "ICCR via Indian High Commission in Lagos/Accra/Nairobi. Apply by April for July intake."}, {"country": "Thailand", "intake": "Aug & Jan", "opens": "Feb (Aug) / Jul (Jan)", "scholarship_dl": "Jan (RTG via Embassy)", "admission_dl": "Feb–Mar (Aug) / Jul–Aug (Jan)", "visa_dl": "Jun (Aug)", "notes": "Royal Thai Scholarship via Thai Embassy. Very generous for medicine and sciences."}, {"country": "China", "intake": "Sep & Feb", "opens": "Feb (Sep) / Sep (Feb)", "scholarship_dl": "Feb–Apr (CSC — via Embassy or university)", "admission_dl": "Apr 30 (Sep) / Oct (Feb)", "visa_dl": "Jun (Sep) / Nov (Feb)", "notes": "CSC scholarship via Chinese Embassy or university route. Check campuschina.org for specific program deadlines."}, {"country": "Japan", "intake": "Apr & Oct", "opens": "Sep (Apr) / Mar (Oct)", "scholarship_dl": "May–Jun (MEXT Embassy route for Apr)", "admission_dl": "Nov–Dec (Apr) / May–Jun (Oct)", "visa_dl": "Feb (Apr) / Aug (Oct)", "notes": "MEXT Embassy route: apply May–Jun. University Recommendation route also available. APU scholarship Nov."}, {"country": "South Korea", "intake": "Sep & Mar", "opens": "Sep–Oct (Sep) / Mar–Apr (Mar)", "scholarship_dl": "Feb (GKS Embassy round — firm)", "admission_dl": "Jan (Sep) / Jul (Mar)", "visa_dl": "Jul (Sep) / Dec (Mar)", "notes": "GKS Embassy round Feb — earlier and more competitive than University round (Sep–Oct)."}, {"country": "Taiwan", "intake": "Sep & Feb", "opens": "Nov–Dec (Sep) / May (Feb)", "scholarship_dl": "Dec–Jan (ICDF — firm)", "admission_dl": "Mar (Sep) / Oct (Feb)", "visa_dl": "Jun (Sep) / Dec (Feb)", "notes": "ICDF scholarship close Dec–Jan at icdf.org.tw. MOE scholarship separate portal."}, {"country": "Australia", "intake": "Feb & Jul", "opens": "Apr–May (Feb) / Oct (Jul)", "scholarship_dl": "Mar–Apr (Australian Awards — firm)", "admission_dl": "Rolling (Oct–Nov for Feb)", "visa_dl": "Oct (for Feb intake)", "notes": "Australian Awards Africa deadline Mar–Apr. Very generous. Apply early."}, {"country": "New Zealand", "intake": "Feb & Jul", "opens": "Oct–Nov (Feb) / Apr (Jul)", "scholarship_dl": "Oct (Otago Global / Massey scholarships)", "admission_dl": "Oct–Nov (Feb) / Apr (Jul)", "visa_dl": "Oct (for Feb) / Apr (for Jul)", "notes": "Most NZ universities have rolling admissions. Apply 3–6 months before intake."}, {"country": "Canada", "intake": "Sep & Jan", "opens": "Dec–Jan (Sep) / Jun–Aug (Jan)", "scholarship_dl": "Feb–Mar (many university scholarships)", "admission_dl": "May–Jun (Sep) / Sep–Oct (Jan)", "visa_dl": "4–8 wks after offer", "notes": "MUN cheapest in Canada. Vanier CGS (PhD) due Nov. PGWP = 3 yrs work after graduation."}, {"country": "USA", "intake": "Aug & Jan", "opens": "Oct–Dec (Aug) / Apr–Jul (Jan)", "scholarship_dl": "Nov–Feb (varies by scholarship)", "admission_dl": "Rolling — Dec 1 to Mar 1 typical", "visa_dl": "After I-20 received (4–8 wks)", "notes": "Rolling admissions for most affordable US universities. MPOWER loan eligible at 500+ schools."}, {"country": "Brazil", "intake": "Mar & Aug", "opens": "Jul–Sep (Mar) / Jan–Feb (Aug)", "scholarship_dl": "Jan–Mar (PEC-G via Embassy — firm)", "admission_dl": "Oct–Nov (Mar) / Apr–May (Aug)", "visa_dl": "Before intake start", "notes": "PEC-G through Brazilian Embassy by Jan–Mar. Portuguese certification (CELPE-Bras B2) needed before enrollment. Prep courses available."}, {"country": "  ⚠️  Scholarship deadlines almost always fall BEFORE admission deadlines. Always apply to scholarships first. Deadlines above are typical — verify on official websites before applying.", "intake": "", "opens": "", "scholarship_dl": "", "admission_dl": "", "visa_dl": "", "notes": ""}];
 const REQS = [{"req": "Secondary School Certificate", "ngn": "WAEC/NECO Senior School Cert (SSCE) — min 5 credits incl. English + Maths", "gha": "WASSCE (WAEC Ghana) — min C6 in core subjects", "ken": "KCSE — min C+ overall + C+ in core subjects", "where": "WAEC office / KNEC", "notes": "Many EU universities require 13 yrs schooling. Nigeria/Ghana/Kenya = 12 yrs — may need 1-yr foundation or bridging course."}, {"req": "University Transcripts (if applicable)", "ngn": "Official transcripts from your university in sealed envelope", "gha": "Same", "ken": "Same", "where": "University Registrar's office", "notes": "Must be official copies. Some countries require certified true copies. Always request extra copies."}, {"req": "APS Certificate (Germany ONLY)", "ngn": "Required for ALL Nigerian applicants to German universities", "gha": "Required for ALL Ghanaian applicants", "ken": "Required for Kenyan applicants to most German programs", "where": "APS Nigeria (Lagos) / APS Ghana (Accra) / APS Kenya", "notes": "Processing: 6–8 weeks. Fee ~€100. Without APS, German universities will not process your application. Apply early."}, {"req": "Language Requirement", "ngn": "Language proficiency test may be required — varies by country and university. Common tests: IELTS Academic, TOEFL iBT, Duolingo, PTE. Some countries (UK, Ireland, Norway) have official exemptions for NGN/GHA/KEN nationals. Others accept MOI (Medium of Instruction) letter but not guaranteed. Always verify directly with the university.", "gha": "Same", "ken": "Same", "where": "British Council (IELTS) / ETS (TOEFL) / Duolingo — book 3–6 months ahead. ", "notes": "Cheaper test preparation: Khan Academy, Magoosh. Duolingo accepted by some universities (score 90–130). TOEFL scores valid 2 years."}, {"req": "Statement of Purpose (SOP)", "ngn": "500–1,500 word essay: why this program, why this university, your goals", "gha": "Same", "ken": "Same", "where": "Self-written", "notes": "Tailor each SOP uniquely. Address your background, goals, and program fit. Critical for scholarship applications."}, {"req": "Letters of Recommendation (LOR)", "ngn": "2–3 letters from professors or professional supervisors", "gha": "Same", "ken": "Same", "where": "From professors, employers, supervisors", "notes": "Contact referees 4–6 weeks in advance. Most universities use online reference request systems. Give referees your CV + SOP draft."}, {"req": "CV / Résumé", "ngn": "Academic history, work experience, leadership, community involvement", "gha": "Same", "ken": "Same", "where": "Self-prepared", "notes": "1–2 pages maximum. Include publications, research, volunteer work. Required for Master's and PhD programs."}, {"req": "Valid Passport", "ngn": "Minimum 6 months validity beyond intended study period", "gha": "Same", "ken": "Same", "where": "Nigerian Immigration Service / Ghana Immigration / Kenya Immigration", "notes": "Apply/renew early — processing delays are common. Some countries need 2+ blank visa pages."}, {"req": "Financial Evidence / Bank Statement", "ngn": "Bank statement showing sufficient funds OR proof of scholarship offer", "gha": "Same", "ken": "Same", "where": "Official bank letter on letterhead — usually dated within 3 months", "notes": "Germany: €11,208/yr in blocked account (Sperrkonto). UK: £1,334/month for 9 months. Canada: CAD$10,000+. USA: varies."}, {"req": "Health Insurance / Medical", "ngn": "Medical certificate of good health + proof of health insurance", "gha": "Same", "ken": "Same", "where": "Registered hospital + insurance provider in your country or host country", "notes": "Most countries require insurance valid for duration of study. Some require pre-departure medical check. Keep documentation."}, {"req": "Campus France Registration (France)", "ngn": "Mandatory pre-step for Nigerian applicants BEFORE applying to French university", "gha": "Mandatory via CampusFrance Ghana", "ken": "Mandatory via CampusFrance Kenya", "where": "nigeria.campusfrance.org / ghana / kenya", "notes": "Fee ~$60–$100. Must complete CampusFrance registration and interview before applying to any French university."}, {"req": "Universitaly Registration (Italy)", "ngn": "Mandatory for all non-EU applicants applying to Italian universities for visa", "gha": "Same", "ken": "Same", "where": "www.universitaly.it (free)", "notes": "Pre-enroll on Universitaly to enable Italian student visa (D-visa) application. Free to register."}, {"req": "Visa Application Fee", "ngn": "UK £363 / Canada CAD$150 / Germany €75 / Australia AUD$710 / USA $185 / Schengen €80", "gha": "Same fees apply", "ken": "Same fees apply", "where": "Embassy/consulate portals (VFS, TLScontact, etc.)", "notes": "Non-refundable. Apply for visa only AFTER receiving unconditional offer letter. Biometrics often required."}, {"req": "Proof of Accommodation (some countries)", "ngn": "Some universities require proof of accommodation booking for visa", "gha": "Same", "ken": "Same", "where": "University housing office or private accommodation", "notes": "Germany and some others require proof before issuing visa. Book student accommodation early."}, {"req": "CELPE-Bras Portuguese Test (Brazil ONLY)", "ngn": "Required for PEC-G scholarship applicants — B2 level minimum", "gha": "Same", "ken": "Same", "where": "Brazilian Cultural Center / Alliance Française in Lagos/Accra/Nairobi", "notes": "Brazil offers free Portuguese preparatory courses to PEC-G applicants via Brazilian Embassy."}];
 
@@ -2646,7 +2610,7 @@ var costFilter = 'all';
 var currentCountry = null;
 var checkerInputs = {firstName:'',email:'',origin:'',level:'',fields:[],budget:'',regions:[],langTest:'',langScore:'',workexp:'',gpa:'',publications:'',funding:'',fundingOptions:['scholarships','school_awards']};
 var currentCheckerStep = 1;
-var totalCheckerSteps = 9;
+var totalCheckerSteps = 11;
 
 // ── HELPERS ──────────────────────────────────────────────────
 function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
@@ -2684,7 +2648,7 @@ function showCheckerStep(n){
   var el=document.getElementById('cstep-'+n);if(el) el.classList.add('active');
   if(typeof n==='number'){updateProgress(n);currentCheckerStep=n;}
   // Step 7: show UG or grad questions based on level
-  if(n===7){
+  if(n===8){
     var isUG = checkerInputs.level==='Undergraduate';
     var ugPanel=document.getElementById('step7-ug');
     var gradPanel=document.getElementById('step7-grad');
@@ -2700,14 +2664,16 @@ function showWarning(s){var e=document.getElementById('warn-'+s);if(e) e.classLi
 function hideWarning(s){var e=document.getElementById('warn-'+s);if(e) e.classList.remove('show');}
 function getStepValue(step){
   if(step===1) return checkerInputs.origin;
-  if(step===2) return checkerInputs.level;
-  if(step===3) return checkerInputs.fields.length>0?'ok':'';
-  if(step===4) return checkerInputs.budget;
-  if(step===5){var a=document.getElementById('region-any-chip');return(checkerInputs.regions.length>0||(a&&a.classList.contains('selected')))?'ok':'';}
-  if(step===6) return checkerInputs.langTest;
-  if(step===7) return(checkerInputs.gpa&&checkerInputs.workexp&&checkerInputs.publications)?'ok':'';
-  if(step===8) return checkerInputs.funding;
-  if(step===9) return checkerInputs.fundingOptions.length>0?'ok':'';
+  if(step===2) return checkerInputs.age;
+  if(step===3) return checkerInputs.level;
+  if(step===4) return checkerInputs.fields.length>0?'ok':'';
+  if(step===5) return checkerInputs.budget;
+  if(step===6){var a=document.getElementById('region-any-chip');return(checkerInputs.regions.length>0||(a&&a.classList.contains('selected')))?'ok':'';}
+  if(step===7) return checkerInputs.langTest;
+  if(step===8) return(checkerInputs.gpa&&checkerInputs.workexp&&checkerInputs.publications)?'ok':'';
+  if(step===9) return checkerInputs.funding;
+  if(step===10) return checkerInputs.risk;
+  if(step===11) return checkerInputs.fundingOptions.length>0?'ok':'';
   return '';
 }
 function nextStep(from){
@@ -2858,6 +2824,37 @@ async function downloadResultsPDF() {
     // ══ STRENGTHS & WEAKNESSES ══
     var swCards = document.querySelectorAll('#sw-inject .sw-card');
     if (swCards.length >= 2) {
+      // ══ MATURE APPLICANT WARNING ══
+      var _pdfAge = checkerInputs.age || '';
+      if (_pdfAge === '31-40' || _pdfAge === 'over40' || _pdfAge === 'under18') {
+        var _wb = _pdfAge==='over40'?[254,242,242]:_pdfAge==='31-40'?[255,251,235]:[239,246,255];
+        var _wbdr = _pdfAge==='over40'?[239,68,68]:_pdfAge==='31-40'?[245,158,11]:[191,219,254];
+        var _wtxt = _pdfAge==='over40'?[153,27,27]:_pdfAge==='31-40'?[120,53,15]:[30,64,175];
+        var _wh = _pdfAge==='over40'?28:_pdfAge==='31-40'?24:18;
+        pdf.setFillColor(_wb[0],_wb[1],_wb[2]);
+        pdf.roundedRect(12, state.y, 186, _wh, 2, 2, 'F');
+        pdf.setDrawColor(_wbdr[0],_wbdr[1],_wbdr[2]);
+        pdf.roundedRect(12, state.y, 186, _wh, 2, 2, 'S');
+        pdf.setTextColor(_wtxt[0],_wtxt[1],_wtxt[2]);
+        pdf.setFontSize(8); pdf.setFont('helvetica','bold');
+        var _wTitle = _pdfAge==='over40'?'High Visa Scrutiny — Mature Applicant (40+)':_pdfAge==='31-40'?'Mature Applicant Note (31-40)':'Under-18 Applicant';
+        pdf.text(_wTitle, 16, state.y + 7);
+        pdf.setFont('helvetica','normal'); pdf.setFontSize(7);
+        if (_pdfAge === '31-40') {
+          pdf.text('Visa officers require strong home-country ties evidence (employment, property, family).', 16, state.y+13);
+          pdf.text('Address any study gaps in your personal statement. Most scholarships have 30-35 age limits.', 16, state.y+18);
+        } else if (_pdfAge === 'over40') {
+          pdf.text('Highest visa denial risk. Build a career-development narrative for visa officers.', 16, state.y+13);
+          pdf.text('Focus on tuition-free countries: Germany, Norway, Czech Republic. Seek mature student pathways.', 16, state.y+18);
+          pdf.text('Prepare strong home-country ties evidence. Most major scholarships are unavailable.', 16, state.y+23);
+        } else {
+          pdf.text('Parental consent and legal guardian at destination required. Most scholarships require age 18+.', 16, state.y+13);
+        }
+        state.y += _wh + 6;
+        pdf.setTextColor(255,255,255);
+      }
+      // ══ END WARNING ══
+
       pdfSectionHeader(pdf, state, 'Profile Analysis');
       var colW = 86;
       // Strengths
@@ -2873,7 +2870,7 @@ async function downloadResultsPDF() {
         if (sy > state.y + strH - 3) return;
         var t = item.textContent.replace(/[^ -~]/g,' ').trim();
         pdf.setTextColor(55,65,81); pdf.setFontSize(7); pdf.setFont('helvetica','normal');
-        var ls = pdf.splitTextToSize('+ ' + t, colW - 6);
+        var ls = pdf.splitTextToSize('+ ' + t, colW - 10);
         ls.slice(0,2).forEach(function(l){ pdf.text(l, 15, sy); sy += 4.5; });
       });
       // Weaknesses
@@ -2889,8 +2886,8 @@ async function downloadResultsPDF() {
         if (wy > state.y + wkH - 3) return;
         var t = item.textContent.replace(/[^ -~]/g,' ').trim();
         pdf.setTextColor(55,65,81); pdf.setFontSize(7); pdf.setFont('helvetica','normal');
-        var ls = pdf.splitTextToSize('→ ' + t, colW - 6);
-        ls.slice(0,2).forEach(function(l){ pdf.text(l, 18+colW+6, wy); wy += 4.5; });
+        var ls = pdf.splitTextToSize('+ ' + t, colW - 10);
+        ls.slice(0,3).forEach(function(l){ pdf.text(l, 18+colW+6, wy); wy += 4.5; });
       });
       state.y += Math.max(strH, wkH, 50) + 8;
     }
@@ -2964,6 +2961,20 @@ async function downloadResultsPDF() {
             pdf.text('  Scholarships: ' + st.substring(0,90), 12, state.y);
             state.y += 4;
           }
+          var uniDetailEl = uni.querySelector('.result-uni-detail');
+          var uniLinkEl = uniDetailEl ? uniDetailEl.querySelector('a.detail-link, a[href]') : uni.querySelector('a[href]');
+          if (uniLinkEl && uniLinkEl.href && uniLinkEl.href.indexOf('http') === 0) {
+            pdfCheckY(pdf, state, 6);
+            pdf.setFillColor(240,249,255);
+            pdf.roundedRect(12, state.y, 186, 6, 1, 1, 'F');
+            pdf.setTextColor(13,148,136); pdf.setFontSize(7); pdf.setFont('helvetica','bold');
+            pdf.text('  Visit: ', 12, state.y+4.2);
+            pdf.setFont('helvetica','normal');
+            var uniUrlClean = uniLinkEl.href.replace(/^https?:\/\//, '').substring(0,65);
+            pdf.text(uniUrlClean, 27, state.y+4.2);
+            pdf.link(12, state.y, 186, 6, {url: uniLinkEl.href});
+            state.y += 8;
+          }
           state.y += 2;
         });
         state.y += 4;
@@ -3007,6 +3018,20 @@ async function downloadResultsPDF() {
             state.y += 5;
           });
         }
+        // Apply link from hidden detail section
+        var schDetailEl = card.querySelector('.result-sch-detail');
+        var schLinkEl = schDetailEl ? schDetailEl.querySelector('a.detail-link, a[href]') : card.querySelector('a[href]');
+        if (schLinkEl && schLinkEl.href && schLinkEl.href.indexOf('http') === 0) {
+          pdfCheckY(pdf, state, 7);
+          pdf.setFillColor(240,253,244); pdf.roundedRect(12, state.y, 186, 7, 1, 1, 'F');
+          pdf.setDrawColor(167,243,208); pdf.roundedRect(12, state.y, 186, 7, 1, 1, 'S');
+          pdf.setTextColor(6,95,70); pdf.setFontSize(7.5); pdf.setFont('helvetica','bold');
+          pdf.text('Apply / Learn More:', 15, state.y+4.8);
+          pdf.setFont('helvetica','normal');
+          pdf.text(schLinkEl.href.replace(/^https?:\/\//, '').substring(0,65), 53, state.y+4.8);
+          pdf.link(12, state.y, 186, 7, {url: schLinkEl.href});
+          state.y += 10;
+        }
         state.y += 5;
         pdfDivider(pdf, state);
       });
@@ -3046,6 +3071,19 @@ async function downloadResultsPDF() {
             pdf.setTextColor(55,65,81); pdf.setFontSize(7); pdf.setFont('helvetica','normal');
             var nls = pdf.splitTextToSize(notesEl.textContent.trim(), 180);
             nls.slice(0,3).forEach(function(l){ pdfCheckY(pdf,state,5); pdf.text(l,14,state.y); state.y+=4.5; });
+          }
+          // Apply / affiliate link for loan/grant card
+          var extraLinkEl = el.querySelector('.detail-link, a[href]');
+          if (extraLinkEl && extraLinkEl.href) {
+            pdfCheckY(pdf, state, 7);
+            var extraUrl = extraLinkEl.href;
+            var extraUrlDisplay = extraUrl.replace(/^https?:\/\//, '').split('?')[0].substring(0,55);
+            pdf.setTextColor(13,148,136); pdf.setFontSize(7.5); pdf.setFont('helvetica','bold');
+            pdf.text('Apply:', 14, state.y);
+            pdf.setFont('helvetica','normal');
+            pdf.text(extraUrlDisplay + (extraUrl.length > 60 ? '...' : ''), 30, state.y);
+            pdf.link(14, state.y-3, 170, 4, {url: extraUrl});
+            state.y += 5;
           }
           state.y += 4;
         }
@@ -3244,7 +3282,7 @@ function toggleChip(el,key,val){
   var warn=document.getElementById('warn-5');if(warn) warn.classList.remove('show');
 }
 function restartChecker(){
-  checkerInputs={firstName:'',email:'',origin:'',level:'',fields:[],budget:'',regions:[],langTest:'',langScore:'',workexp:'',gpa:'',publications:'',funding:'',fundingOptions:['scholarships','school_awards']};
+  checkerInputs={firstName:'',email:'',origin:'',level:'',fields:[],budget:'',regions:[],langTest:'',langScore:'',workexp:'',gpa:'',publications:'',funding:'',fundingOptions:['scholarships','school_awards'],age:'',risk:''};
   var radios=document.querySelectorAll('.checker-radio');for(var i=0;i<radios.length;i++) radios[i].classList.remove('selected');
   var chips=document.querySelectorAll('.checker-chip');for(var i=0;i<chips.length;i++) chips[i].classList.remove('selected');
   var a=document.getElementById('region-any-chip');if(a) a.classList.add('selected');
@@ -3319,6 +3357,14 @@ function calcScores(){
   }
   if(checkerInputs.budget==='mid') r+=10;else if(checkerInputs.budget==='low') r+=8;else if(checkerInputs.budget==='free') r+=5;else r+=3;
   if(checkerInputs.level==='PhD'){s+=10;r+=5;}else if(checkerInputs.level==='Masters'){s+=8;r+=5;}else{s+=3;r+=3;}
+  if(checkerInputs.age==='under18'){r+=2;s-=5;}
+  else if(checkerInputs.age==='18-24'){r+=8;s+=8;}
+  else if(checkerInputs.age==='25-30'){r+=5;s+=4;}
+  else if(checkerInputs.age==='31-40'){r-=4;s-=6;}
+  else if(checkerInputs.age==='over40'){r-=8;s-=10;}
+  if(checkerInputs.risk==='high'){s+=8;}
+  else if(checkerInputs.risk==='medium'){s+=4;}
+  else if(checkerInputs.risk==='low'){r+=4;}
   return{readiness:Math.min(100,Math.round(r)),schOdds:Math.min(100,Math.round(s))};
 }
 function getReadinessLabel(score){
@@ -3484,6 +3530,8 @@ function renderCheckerResults(countryResults,schResults){
   var actBlock='<div class="next-actions"><div class="next-actions-title">&#127919; Your Next 3 Actions</div>'+aHtml+'</div>';
   // Score header → panel 1 (main)
   document.getElementById('score-header-inject').innerHTML = scoreHdr;
+  var _wi = document.getElementById('watchout-inject');
+  if (_wi) _wi.innerHTML = buildWatchoutSection(countryResults, schResults);
   // Strengths + actions → panel 2 (breakdown)
   document.getElementById('sw-inject').innerHTML = swHtml;
   document.getElementById('actions-inject').innerHTML = actBlock;
@@ -3592,13 +3640,13 @@ function renderCheckerResults(countryResults,schResults){
     extrasHtml += '<div class="results-section-title" style="margin-top:20px">&#128179; Student Loans (No Cosigner Required) <span class="results-count-badge">'+LOANS.length+'</span></div>';
     for(var li=0;li<LOANS.length;li++){
       var ln=LOANS[li];
-      var lElig=function(v,label){if(!v) return '';var cls=v.indexOf('✅')>=0?'elig-yes':'elig-check';return '<span class="elig-badge '+cls+'">'+label+'</span>';};
+      var lElig=function(v,label){if(!v) return '';var isPass=(ln.lender||'').indexOf('Passage')>=0;var cls=v.indexOf('✅')>=0?(isPass?'elig-yes elig-pass':'elig-yes'):'elig-check';return '<span class="elig-badge '+cls+'">'+label+'</span>';};
       extrasHtml += '<div class="result-sch-card" style="cursor:default;border-color:#dbeafe;background:#eff6ff">'
         +'<div class="result-sch-name" style="color:#1e40af">'+esc(ln.lender||'')+'</div>'
         +'<div class="result-sch-meta">'+esc(ln.amount||'')+'&nbsp;&middot;&nbsp;Rate: '+esc(ln.rate||'')+'&nbsp;&middot;&nbsp;'+esc(ln.countries||'')+'</div>'
         +'<div style="display:flex;gap:5px;margin-top:4px">'+lElig(ln.ngn,'Nigeria')+lElig(ln.gha,'Ghana')+lElig(ln.ken,'Kenya')+'</div>'
         +(ln.notes?'<div style="font-size:11px;color:var(--slate);margin-top:4px">'+esc(ln.notes)+'</div>':'')
-        +(ln.link?'<a href="https://'+esc(ln.link)+'" target="_blank" class="detail-link">Apply / Learn More &#x2197;</a>':'')
+        +(function(){var _la={'Passage (formerly Navient)':'https://go.passage.com/landing?ref=radiusapp','MPOWER Financing':'https://app.mpowerfinancing.com/?utm_medium=link&utm_campaign=partnerlink&utm_source=pay4me&utm_content=20220720-eligibility','Prodigy Finance':'https://prodigyfinance.com/?utm_source=Pay-4-Me&utm_medium=website&utm_content=homepage&utm_campaign=partners-Pay-4-Me-referral-2023'};var _lu=_la[ln.lender]||(ln.link?'https://'+ln.link:null);return _lu?'<a href="'+_lu+'" target="_blank" class="detail-link">Apply / Learn More ↗</a>':'';}())
         +'</div>';
     }
   }
@@ -3632,30 +3680,40 @@ async function getAISummary(cr,sr){
 
 // ── RUN CHECKER ──────────────────────────────────────────────
 async function runChecker(){
-  if(!checkerInputs.funding){showWarning(8);return;}
-  hideWarning(8);
-  if(checkerInputs.fundingOptions.length===0){showWarning(9);return;}
-  hideWarning(9);showCheckerStep('loading');
+  if(!checkerInputs.funding){showWarning(9);return;}
+  hideWarning(9);
+  if(checkerInputs.fundingOptions.length===0){showWarning(11);return;}
+  hideWarning(11);showCheckerStep('loading');
   document.getElementById('checker-progress').style.width='100%';
   document.getElementById('checker-step-label').textContent='Finding your matches...';
   var msgs=['Matching your profile to 140+ universities...','Filtering scholarships by eligibility...','Checking deadline calendars...','Generating your personal summary...'];
   var mi=0;var intv=setInterval(function(){mi=(mi+1)%msgs.length;var e=document.getElementById('loader-text');if(e) e.textContent=msgs[mi];},1200);
   var cr=filterUniversities();var sr=filterScholarships();
-  var ai=await getAISummary(cr,sr);
-  clearInterval(intv);
   renderCheckerResults(cr,sr);
-  document.getElementById('ai-summary-text').textContent=ai; populateAISummary(ai);
-  showCheckerStep('results');
-  document.getElementById('checker-step-label').textContent='Your results are ready';
-  // Scroll overlay + modal to top
+  var _fb='Your profile has been matched to the universities below. Start with scholarship applications 8-10 months before your target intake.';
+  document.getElementById('ai-summary-text').textContent=_fb;
+  populateAISummary(_fb);
+  // Show loader briefly so the transition feels intentional
   setTimeout(function(){
-    var overlay = document.getElementById('checker-overlay');
-    var modal = document.querySelector('.checker-modal');
-    if(overlay) overlay.scrollTop = 0;
-    if(modal) modal.scrollTop = 0;
-    // On mobile, also scroll window to remove address bar
-    window.scrollTo(0, 1);
-  }, 100);
+    clearInterval(intv);
+    showCheckerStep('results');
+    document.getElementById('checker-step-label').textContent='Your results are ready';
+        setTimeout(function(){
+      var overlay=document.getElementById('checker-overlay');
+      var modal=document.querySelector('.checker-modal');
+      if(overlay) overlay.scrollTop=0;
+      if(modal) modal.scrollTop=0;
+      window.scrollTo(0,1);
+    },100);
+  }, 1800);
+  // Try AI summary in background — update if it comes back in time
+  getAISummary(cr,sr).then(function(ai){
+    if(ai&&ai!==_fb){
+      document.getElementById('ai-summary-text').textContent=ai;
+      populateAISummary(ai);
+    }
+  }).catch(function(){});
+
 }
 
 // ── POPULATE PREVIEW ─────────────────────────────────────────
@@ -3695,7 +3753,6 @@ function populatePreview(){
   var snapType = rl.label;
   var snapStrength = "I just checked my Study Abroad & Scholarship eligibility on Radius and my " + snapType + " profile was matched to free and affordable universities, scholarships, loans, jobs, and other funding opportunities in " + fields + " across the countries below";
   if(ge('snap-profile')) ge('snap-profile').textContent = snapStrength;
-  // QR codes are now inline SVG
   if(ge('snap-strengths')) ge('snap-strengths').textContent = '';
 }
 
@@ -3910,11 +3967,15 @@ function renderLoans(){
   var html='';
   for(var i=0;i<LOANS.length;i++){
     var l=LOANS[i];
-    var eb=function(v,label){if(!v) return '';var cls=v.indexOf('\u2705')>=0?'elig-yes':(v.indexOf('\u26a0')>=0||v.indexOf('Check')>=0)?'elig-check':'elig-no';return '<span class="elig-badge '+cls+'">'+label+'</span>';};
+    var eb=function(v,label){if(!v) return '';var isPass=(l.lender||'').indexOf('Passage')>=0;var cls=v.indexOf('\u2705')>=0?(isPass?'elig-yes elig-pass':'elig-yes'):(v.indexOf('\u26a0')>=0||v.indexOf('Check')>=0)?'elig-check':'elig-no';return '<span class="elig-badge '+cls+'">'+label+'</span>';};
     var elig=eb(l.ngn,'Nigeria')+eb(l.gha,'Ghana')+eb(l.ken,'Kenya');
-    var alink=l.link?(' <a href="https://'+esc(l.link)+'" target="_blank" class="apply-link">Apply \u2197</a>'):'';
-    html+='<div class="loan-card">'
-      +'<div class="loan-header"><div><div class="loan-name">'+esc(l.lender||'')+'</div><div style="font-size:12px;color:#94a3b8;margin-top:4px">'+esc(l.countries||'')+'</div></div><div class="loan-amount">'+esc(l.amount||'')+'</div></div>'
+    var _aff={'Passage (formerly Navient)':'https://go.passage.com/landing?ref=radiusapp','MPOWER Financing':'https://app.mpowerfinancing.com/?utm_medium=link&utm_campaign=partnerlink&utm_source=pay4me&utm_content=20220720-eligibility','Prodigy Finance':'https://prodigyfinance.com/?utm_source=Pay-4-Me&utm_medium=website&utm_content=homepage&utm_campaign=partners-Pay-4-Me-referral-2023'};
+    var _applyUrl=_aff[l.lender]||null;
+    if(!_applyUrl&&l.link) _applyUrl=(l.link.indexOf('http')===0?l.link:'https://'+l.link);
+    var alink=_applyUrl?' <a href="'+_applyUrl+'" target="_blank" class="apply-link">Apply ↗</a>':'';
+    if(!(l.lender||'').trim()||(l.lender||'').indexOf('RADIUS TIP')>=0) continue;
+    var isPassage=(l.lender||'').indexOf('Passage')>=0;
+    html+='<div class="loan-card" '+(isPassage?'style="border:2px solid #059669;"':'')+'>'+'<div class="loan-header" '+(isPassage?'style="background:#065f46 !important;"':'')+'>'+'<div><div class="loan-name">'+esc(l.lender||'')+'</div>'+(isPassage?'<div style="font-size:11px;font-weight:700;color:#6ee7b7;margin-top:4px;letter-spacing:.3px;">✅ Nigeria &nbsp;·&nbsp; ✅ Ghana &nbsp;·&nbsp; ✅ Kenya</div>':'')+'<div style="font-size:12px;color:'+(isPassage?'#a7f3d0':'#94a3b8')+';margin-top:4px">'+esc(l.countries||'')+'</div></div><div class="loan-amount">'+esc(l.amount||'')+'</div></div>'
       +'<div class="loan-body">'
       +'<div class="loan-field"><label>Interest Rate</label><span>'+esc(l.rate||'')+'</span></div>'
       +'<div class="loan-field"><label>Repayment</label><span>'+esc(l.repay||'')+'</span></div>'
@@ -3967,6 +4028,62 @@ var GLOSSARY=[['APS Certificate','Required for all Nigerian, Ghanaian, and Kenya
 function renderGlossary(){var html='';for(var i=0;i<GLOSSARY.length;i++) html+='<div class="gloss-item"><div class="gloss-term">'+esc(GLOSSARY[i][0])+'</div><div class="gloss-def">'+esc(GLOSSARY[i][1])+'</div></div>';document.getElementById('glossary-grid').innerHTML=html;}
 
 
+// ── WATCH OUT SECTION ──────────────────────────────────────────
+function buildWatchoutSection(cr, sr) {
+  var items = [];
+  var age = checkerInputs.age || '';
+  var risk = checkerInputs.risk || 'medium';
+  var budget = checkerInputs.budget || '';
+  var funding = checkerInputs.funding || '';
+  var gpa = checkerInputs.gpa || '';
+  var workexp = checkerInputs.workexp || '';
+  var level = checkerInputs.level || '';
+  var langTest = checkerInputs.langTest || '';
+
+  if (age === '31-40') {
+    items.push({type:'red',icon:'🛂',title:'Visa scrutiny',msg:'Visa officers will look for strong ties to your home country. Prepare evidence of employment, property ownership, or family responsibilities and address this in your personal statement.'});
+    items.push({type:'amber',icon:'📋',title:'Scholarship age limits',msg:'Most competitive scholarships (Chevening, Commonwealth, Gates, DAAD) have age limits of 30-35. Focus on university-specific awards and country government scholarships.'});
+  }
+  if (age === 'over40') {
+    items.push({type:'red',icon:'🛂',title:'High visa scrutiny',msg:'Applicants over 40 face the highest visa denial risk. Build a compelling career development narrative and prepare strong home-country ties evidence. Germany and Norway have the most flexible policies for mature students.'});
+    items.push({type:'red',icon:'📋',title:'Very limited scholarship eligibility',msg:'The majority of international scholarships are not available to applicants over 40. Focus on tuition-free countries like Germany, Norway and Czech Republic.'});
+    items.push({type:'amber',icon:'🎓',title:'Mature student pathways',msg:'Look specifically for universities that advertise mature student or adult learner programmes. These have more flexible entry requirements.'});
+  }
+  if (age === 'under18') {
+    items.push({type:'blue',icon:'👨‍👩‍👦',title:'Parental consent required',msg:'You will need a signed parental consent form and a legal guardian arrangement in your destination country. Most universities require you to be 18 by the start date.'});
+  }
+  if (workexp === 'none' && level === 'Masters') {
+    items.push({type:'amber',icon:'📅',title:'No work experience for Masters',msg:'Most competitive Masters programmes and scholarships like Chevening require at least 2 years of work experience. Focus on research-based Masters or programmes that accept fresh graduates.'});
+  }
+  if (funding === 'selffund' && (budget === 'free' || budget === 'low')) {
+    items.push({type:'amber',icon:'💰',title:'Self-funding on a tight budget',msg:'Self-funding with a low budget is high risk. Prioritise tuition-free countries like Germany, Norway and Czech Republic.'});
+  }
+  if (!langTest || langTest === 'none') {
+    items.push({type:'amber',icon:'🌐',title:'No language test score',msg:'Most universities require IELTS or TOEFL. Start test preparation early — scores can take 2-3 months to obtain.'});
+  }
+  if (gpa === 'below3' || gpa === 'below50') {
+    items.push({type:'amber',icon:'📊',title:'Lower academic profile',msg:'A GPA below 3.0 may limit options at competitive universities. Emphasise work experience and research in your personal statement.'});
+  }
+  items.push({type:'blue',icon:'🏠',title:'Home country ties',msg:'Every visa application requires proof you intend to return home. Prepare documentation of employment, property, business, or family responsibilities before your visa application.'});
+  if (risk === 'high' && (gpa === 'below3' || gpa === 'below50')) {
+    items.push({type:'red',icon:'⚠️',title:'High risk with weak academic profile',msg:'Targeting fully-funded competitive scholarships with a GPA below 3.0 is unlikely to succeed. Consider a medium risk approach instead.'});
+  }
+  if (items.length === 0) return '';
+  var html = '<div class="watchout-section"><div class="watchout-title">⚠️ Watch Out For</div>';
+  for (var i = 0; i < items.length; i++) {
+    var item = items[i];
+    var cls = 'watchout-item'+(item.type==='red'?' red':item.type==='blue'?' blue':'');
+    html += '<div class="'+cls+'">'
+      +'<div class="watchout-icon">'+item.icon+'</div>'
+      +'<div class="watchout-item-content">'
+      +'<div class="watchout-item-title">'+item.title+'</div>'
+      +'<div class="watchout-text">'+item.msg+'</div>'
+      +'</div></div>';
+  }
+  html += '</div>';
+  return html;
+}
+
 function init(){
   renderCountries(COUNTRIES);
   var countries=[],seen={};for(var i=0;i<GOVT_SCHS.length;i++){var c=GOVT_SCHS[i].country;if(c&&!seen[c]){countries.push(c);seen[c]=true;}}countries.sort();
@@ -3983,7 +4100,6 @@ init();
 
 
 
-// ── AI SUMMARY EXPAND/COLLAPSE ────────────────────────────────
 function populateAISummary(text) {
   var sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
   var preview = sentences.slice(0, 2).join(' ').trim();
@@ -3993,10 +4109,7 @@ function populateAISummary(text) {
   var btn = document.getElementById('ai-summary-more-btn');
   if (previewEl) previewEl.textContent = preview;
   if (fullEl) { fullEl.textContent = rest; fullEl.style.display = 'none'; }
-  if (btn) {
-    if (rest) { btn.textContent = 'Read more ↓'; btn.style.display = 'block'; }
-    else { btn.style.display = 'none'; }
-  }
+  if (btn) { if (rest) { btn.textContent = 'Read more ↓'; btn.style.display = 'block'; } else { btn.style.display = 'none'; } }
 }
 function toggleAISummaryMore() {
   var full = document.getElementById('ai-summary-full');
@@ -4006,4 +4119,8 @@ function toggleAISummaryMore() {
   full.style.display = hidden ? 'block' : 'none';
   btn.textContent = hidden ? 'Show less ↑' : 'Read more ↓';
 }
+
+
+
+
 </script>
