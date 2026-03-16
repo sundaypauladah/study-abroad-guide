@@ -1935,6 +1935,61 @@ html, body {
   .sp-ring-num { font-size: 14px !important; }
 }
 /* ══ END SP-RING FINAL OVERRIDE ══ */
+
+/* ══ HERO TWO-COLUMN LAYOUT ══ */
+.hero-inner {
+  display: flex !important;
+  align-items: center !important;
+  gap: 40px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+.hero-content-col {
+  flex: 1;
+  min-width: 0;
+}
+.hero-visual-col {
+  flex-shrink: 0;
+  width: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-globe-wrap {
+  width: 340px;
+  height: 340px;
+  position: relative;
+}
+.hero-globe {
+  width: 100%;
+  height: 100%;
+}
+/* Orbit animations */
+.orbit-dot-1 { animation: orbit1 8s linear infinite; }
+.orbit-dot-2 { animation: orbit2 10s linear infinite; }
+.orbit-dot-3 { animation: orbit3 12s linear infinite; }
+.orbit-ring  { animation: spin 20s linear infinite; }
+@keyframes orbit1 {
+  0%   { transform: rotate(0deg) translateX(90px) rotate(0deg); transform-origin: 170px 170px; }
+  100% { transform: rotate(360deg) translateX(90px) rotate(-360deg); transform-origin: 170px 170px; }
+}
+@keyframes orbit2 {
+  0%   { transform: rotate(180deg) translateX(105px) rotate(-180deg); transform-origin: 170px 170px; }
+  100% { transform: rotate(540deg) translateX(105px) rotate(-540deg); transform-origin: 170px 170px; }
+}
+@keyframes orbit3 {
+  0%   { transform: rotate(90deg) translateX(128px) rotate(-90deg); transform-origin: 170px 170px; }
+  100% { transform: rotate(450deg) translateX(128px) rotate(-450deg); transform-origin: 170px 170px; }
+}
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+/* Hide on mobile */
+@media (max-width: 860px) {
+  .hero-visual-col { display: none !important; }
+  .hero-inner { display: block !important; }
+}
+/* ══ END HERO TWO-COLUMN LAYOUT ══ */
 </style>
 </head>
 <body>
@@ -1946,6 +2001,7 @@ html, body {
 
 <div class="hero">
   <div class="hero-inner">
+    <div class="hero-content-col">
     <div class="hero-badge">&#127757; Free Study Abroad Admission, Visa &amp; Funding Resources</div>
     <h1>Find Affordable Universities<br><em>Anywhere in the World</em></h1>
     <p class="hero-sub">Free to $10,000/yr tuition. 34 countries. Scholarships, grants, assistantships, and student loans &mdash; all in one place.</p>
@@ -1960,10 +2016,56 @@ html, body {
       <div class="hero-step-arrow">&#8594;</div>
       <div class="hero-step"><span class="hero-step-num">3</span><span>See matched universities &amp; scholarships</span></div>
     </div>
-
-
-  </div>
-</div>
+    </div><!-- end hero-content-col -->
+    <div class="hero-visual-col">
+      <div class="hero-globe-wrap">
+        <svg class="hero-globe" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="globeGlow" cx="40%" cy="38%" r="60%">
+              <stop offset="0%" stop-color="#0d9488" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#0f1f3d" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="globeFill" cx="38%" cy="35%" r="65%">
+              <stop offset="0%" stop-color="#1e3a5f"/>
+              <stop offset="60%" stop-color="#0f2744"/>
+              <stop offset="100%" stop-color="#071628"/>
+            </radialGradient>
+            <filter id="glowF"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <circle cx="170" cy="170" r="155" fill="url(#globeGlow)"/>
+          <circle cx="170" cy="170" r="120" fill="url(#globeFill)" stroke="#0d9488" stroke-width="1.5" opacity="0.9"/>
+          <ellipse cx="170" cy="170" rx="120" ry="38" fill="none" stroke="#0d9488" stroke-width="0.6" opacity="0.3"/>
+          <ellipse cx="170" cy="170" rx="120" ry="78" fill="none" stroke="#0d9488" stroke-width="0.6" opacity="0.2"/>
+          <ellipse cx="170" cy="170" rx="38" ry="120" fill="none" stroke="#0d9488" stroke-width="0.6" opacity="0.3"/>
+          <ellipse cx="170" cy="170" rx="78" ry="120" fill="none" stroke="#0d9488" stroke-width="0.6" opacity="0.2"/>
+          <line x1="50" y1="170" x2="290" y2="170" stroke="#0d9488" stroke-width="0.8" opacity="0.35"/>
+          <line x1="170" y1="50" x2="170" y2="290" stroke="#0d9488" stroke-width="0.8" opacity="0.35"/>
+          <path d="M175 140 L188 148 L192 165 L189 185 L182 198 L170 202 L162 196 L158 178 L160 160 L168 145 Z" fill="#1a4a3a" opacity="0.8"/>
+          <path d="M145 120 L158 115 L168 118 L172 130 L165 138 L152 140 L142 133 Z" fill="#1a4a3a" opacity="0.7"/>
+          <path d="M195 115 L225 112 L242 125 L238 145 L220 152 L200 148 L188 138 L190 125 Z" fill="#1a4a3a" opacity="0.75"/>
+          <path d="M105 130 L118 125 L124 140 L120 162 L110 168 L100 155 L98 140 Z" fill="#1a4a3a" opacity="0.6"/>
+          <ellipse cx="170" cy="170" rx="148" ry="42" fill="none" stroke="#5eead4" stroke-width="1" opacity="0.2" transform="rotate(-25 170 170)"/>
+          <circle cx="185" cy="175" r="4" fill="#5eead4" filter="url(#glowF)" opacity="0.9"/>
+          <circle cx="168" cy="125" r="4" fill="#5eead4" filter="url(#glowF)" opacity="0.9"/>
+          <circle cx="210" cy="118" r="3.5" fill="#5eead4" filter="url(#glowF)" opacity="0.8"/>
+          <circle cx="108" cy="148" r="3" fill="#5eead4" opacity="0.7"/>
+          <circle cx="240" cy="155" r="3.5" fill="#5eead4" opacity="0.8"/>
+          <line x1="185" y1="175" x2="168" y2="125" stroke="#5eead4" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
+          <line x1="185" y1="175" x2="210" y2="118" stroke="#5eead4" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.35"/>
+          <line x1="185" y1="175" x2="108" y2="148" stroke="#5eead4" stroke-width="0.6" stroke-dasharray="3,3" opacity="0.3"/>
+          <g class="orbit-dot-1"><circle cx="66" cy="148" r="10" fill="#0d9488" opacity="0.9" filter="url(#glowF)"/><text x="66" y="153" text-anchor="middle" font-size="11">🇳🇬</text></g>
+          <g class="orbit-dot-2"><circle cx="275" cy="192" r="10" fill="#059669" opacity="0.9" filter="url(#glowF)"/><text x="275" y="197" text-anchor="middle" font-size="11">🇬🇭</text></g>
+          <g class="orbit-dot-3"><circle cx="170" cy="42" r="10" fill="#0d9488" opacity="0.85" filter="url(#glowF)"/><text x="170" y="47" text-anchor="middle" font-size="11">🇰🇪</text></g>
+          <g transform="translate(268,88)"><rect width="65" height="32" rx="8" fill="rgba(13,148,136,0.18)" stroke="#0d9488" stroke-width="1"/><text x="32" y="13" text-anchor="middle" font-family="Syne,sans-serif" font-weight="800" font-size="12" fill="#5eead4">34</text><text x="32" y="25" text-anchor="middle" font-size="7" fill="#94a3b8">COUNTRIES</text></g>
+          <g transform="translate(268,200)"><rect width="65" height="32" rx="8" fill="rgba(13,148,136,0.18)" stroke="#0d9488" stroke-width="1"/><text x="32" y="13" text-anchor="middle" font-family="Syne,sans-serif" font-weight="800" font-size="12" fill="#5eead4">140+</text><text x="32" y="25" text-anchor="middle" font-size="7" fill="#94a3b8">UNIVERSITIES</text></g>
+          <g transform="translate(7,88)"><rect width="60" height="32" rx="8" fill="rgba(13,148,136,0.18)" stroke="#0d9488" stroke-width="1"/><text x="30" y="13" text-anchor="middle" font-family="Syne,sans-serif" font-weight="800" font-size="12" fill="#5eead4">60+</text><text x="30" y="25" text-anchor="middle" font-size="7" fill="#94a3b8">SCHOLARSHIPS</text></g>
+          <g transform="translate(7,200)"><rect width="60" height="32" rx="8" fill="rgba(5,150,105,0.18)" stroke="#059669" stroke-width="1"/><text x="30" y="13" text-anchor="middle" font-family="Syne,sans-serif" font-weight="800" font-size="12" fill="#6ee7b7">$0</text><text x="30" y="25" text-anchor="middle" font-size="7" fill="#94a3b8">GUIDE COST</text></g>
+          <ellipse cx="140" cy="130" rx="35" ry="22" fill="white" opacity="0.04" transform="rotate(-30 140 130)"/>
+        </svg>
+      </div>
+    </div><!-- end hero-visual-col -->
+  </div><!-- end hero-inner -->
+</div><!-- end hero -->
 
 <div class="nav-tabs-wrap">
 <div class="nav-scroll-left" id="nav-scroll-left" onclick="navScrollLeft()"><span class="nav-arrow">&#8249;</span></div>
