@@ -1861,6 +1861,46 @@ html, body {
   .score-ring-wrap { flex-shrink: 0 !important; }
 }
 /* ══ END SCORE RING MOBILE FIX ══ */
+
+/* ══ MOBILE HERO SPACING FIX ══ */
+@media (max-width: 540px) {
+  /* Reduce space between topbar and hero content */
+  .hero {
+    padding: 28px 0 24px !important;
+  }
+  /* H1 stays 2 lines max */
+  .hero h1 {
+    font-size: 26px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 10px !important;
+  }
+  /* Subtext 2 lines max */
+  .hero-sub {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 18px !important;
+    max-width: 100% !important;
+  }
+  /* CTA button */
+  .checker-hero-btn--pulse {
+    margin-bottom: 16px !important;
+  }
+  /* Reduce space between step 3 and nav tabs */
+  .hero-steps {
+    margin-bottom: 0 !important;
+  }
+  .hero-inner {
+    padding-bottom: 0 !important;
+  }
+  /* Tighten hero step spacing */
+  .hero-step {
+    font-size: 13px !important;
+  }
+  .hero-step-arrow {
+    margin: 2px 0 !important;
+  }
+}
+/* ══ END MOBILE HERO SPACING FIX ══ */
 </style>
 </head>
 <body>
@@ -1874,7 +1914,7 @@ html, body {
   <div class="hero-inner">
     <div class="hero-badge">&#127757; Free Study Abroad Admission, Visa &amp; Funding Resources</div>
     <h1>Find Affordable Universities<br><em>Anywhere in the World</em></h1>
-    <p class="hero-sub">Free to $10,000/yr tuition. 34 countries.<br>Scholarships, grants, assistantships, and student loans &mdash; all in one place.</p>
+    <p class="hero-sub">Free to $10,000/yr tuition. 34 countries. Scholarships, grants, assistantships, and student loans &mdash; all in one place.</p>
 
         <button class="checker-hero-btn checker-hero-btn--pulse" onclick="openChecker()">
       &#127919; Check My Eligibility &amp; Get Matched &rarr;
